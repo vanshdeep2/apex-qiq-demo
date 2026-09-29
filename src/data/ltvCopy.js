@@ -6,7 +6,7 @@
  * distributors - the Alberta Utilities Consumer Advocate confirms
  * distributor is set by location, not choice. Any "at risk of churning" /
  * "customers might leave" framing is factually wrong for this client,
- * unlike Rover/Kyndryl/BBB/Brooklinen, which all have real competitive
+ * unlike consumer-brand clients, which all have real competitive
  * churn. So this panel uses avoidable cost-to-serve / relationship-quality-
  * risk language throughout, never churn or attrition language.
  *
@@ -65,9 +65,9 @@ export const AT_RISK_SIDE_LEGEND = [{ label: 'Customer annual value', color: '#c
 /**
  * Micro Coaching CAD slices that sum to periodProtected (same relative
  * weights as the at-risk donut). Estimate of avoidable cost protected by the
- * continuation-cohort CSAT recovery so far (2.3 → 3.4 since week 2); this
- * is a partial, early result, not a cleared cost - the auto-fail count has
- * fallen from its week-1 peak but has not settled into a clean line (see
+ * continuation-cohort CSAT recovery so far (2.0 → 2.9 since week 2); this
+ * is a partial, early result, not a cleared cost - the auto-fail count
+ * relapsed to its week-1 level in week 3 and has only fallen since (see
  * executiveConstants.CRITICAL_FAILURES).
  */
 export const COACHING_VALUE_LINES = [
@@ -130,8 +130,8 @@ export const AT_RISK_RISK_SUBTITLE =
  * coachingCohortWeekly is set to the same 450-account cohort the cost
  * model uses - deliberately not a wider invented population.
  * coachingProtectionPct is 55%, a conservative modelling assumption: Apex's
- * auto-fail trend fell from its week-1 peak but has not settled into a
- * clean line (16 -> 9 -> 11 -> 8 -> 11), so crediting a higher protection
+ * auto-fail trend has only fallen for two weeks (14 -> 12 -> 14 -> 8 -> 2,
+ * falling only since week 3), so crediting a higher protection
  * rate would overstate the result. It is a modelling assumption, NOT an
  * Apex-sourced figure, and the in-app assumption text says so.
  *

@@ -32,7 +32,7 @@ export const INTERNAL_VOC_STRIP = [
     volumeNote: 'Rate Class / Bill Impact Questions and Billing & Fee Dispute Escalations combine to 34.0% of weekly contacts, the largest pattern in the taxonomy',
     workaround: 'Customers calling back repeatedly and re-explaining the same dispute from scratch each time, because nothing on the account shows it was already raised.',
     evidence: 'One customer’s dispute sequence produces a first contact scoring CSAT 4 and QA 92%, then follow-up contacts scoring CSAT 2, 1, and 1 while QA still holds at 85-88%. The scorecard cannot see the second contact is the same unresolved dispute.',
-    action: 'Micro Coaching card 1 (start where they left off) and card 2 (let the dispute set the tone) deployed to the whole team from week 2. Continuation-cohort CSAT has moved every week since, 2.3 to 3.4. Auto-fail outcomes are down from their week-1 peak of 16 to 11 by week 5, not yet a clean decline - a real early result, not a closed case.',
+    action: 'Micro Coaching card 1 (start where they left off) and card 2 (let the dispute set the tone) deployed to the whole team from week 2. Continuation-cohort CSAT has moved every week since, 2.0 to 2.9. Auto-fail outcomes went back to their week-1 level (14) in week 3 before falling to 2 by week 5 - a real early result, not a closed case.',
   },
   {
     id: 'missing-bill',
@@ -125,7 +125,7 @@ export const COMBINED_VOC_ISSUES = {
       internal: '1,088 combined weekly contacts (34.0% of volume), 31% of Billing & Fee Dispute contacts closed with no resolution path, ownership behaviour scoring 2.4 on continuation. Root cause is disputed fees and rate-class confusion landing on top of the August 1 Phase 2 change.',
       external: 'External mentions of fee/policy complaints rose from 1 to 4 in the same week, 9 days after the internal spike began, and are corroborated by two direct quoted reviews describing disproportionate fees.',
       action: 'Micro Coaching cards 1 and 2 deployed team-wide from week 2 (see below). A billing-team fee-review fast-path for disputes over a threshold is queued for deployment (see Actions).',
-      status: 'CSAT recovering · auto-fails down from peak but uneven · live team-wide since week 2',
+      status: 'CSAT recovering · auto-fails falling since week 3 · live team-wide since week 2',
     },
     {
       id: 'missing-bill',
@@ -254,16 +254,16 @@ export const ACTION_DETAILS = {
   'decide-scale-coaching': {
     tone: 'red',
     type: 'System',
-    chip: 'CSAT 2.3 → 3.4',
+    chip: 'CSAT 2.0 → 2.9',
     category: 'Decide now',
     title: 'Keep Micro Coaching mandatory for every agent on continuation contacts',
     summary:
       'All ten agents carried auto-fails on the same pattern, so the start-where-they-left-off and let-the-dispute-set-the-tone cards were rolled out team-wide from week 2, not held to the agents who surfaced it first. The decision now is to keep it a standing requirement, not a one-off pilot.',
     rationale:
-      'Sipho van der Merwe carried the most auto-fails on the team, with Kagiso Radebe and Vusi Jacobs close behind. All three scored close to the team QA average while CSAT sat well below it on the same contacts. The underlying pattern, treating a follow-up dispute contact as a fresh call, showed up across the whole team, so the fix was built team-wide from the start.',
+      'Kagiso Radebe, Vusi Jacobs and Sipho van der Merwe carried the most auto-fails on the team, 8 each. All three scored close to the team QA average while CSAT sat well below it on the same contacts. The underlying pattern, treating a follow-up dispute contact as a fresh call, showed up across the whole team, so the fix was built team-wide from the start.',
     owner: 'CCM + Team Leads',
     timeline: 'Live team-wide since week 2, this decision is whether it stays a permanent standard',
-    impact: 'Continuation-cohort CSAT already 2.3 → 3.4 across the team. Keeping it mandatory is what holds that line as dispute volume grows through the rate-change season; auto-fail volume has fallen from its week-1 peak but has not settled into a clean line yet, which is the reason to keep it running rather than declare it done.',
+    impact: 'Continuation-cohort CSAT already 2.0 → 2.9 across the team. Keeping it mandatory is what holds that line as dispute volume grows through the rate-change season; auto-fail volume relapsed in week 3 and has only fallen for two weeks, which is the reason to keep it running rather than declare it done.',
     kpis: ['CSAT', 'Auto-fail contacts', 'Continuation contacts'],
   },
   'decide-billing-fastpath': {
@@ -327,9 +327,9 @@ export const ACTION_DETAILS = {
     tone: 'amber',
     category: 'Watch next week',
     title: 'Auto-fail contacts and continuation CSAT trend',
-    summary: 'Confirm auto-fail volume keeps trending down from its week-1 peak and continuation CSAT keeps climbing now that coaching is standard across the whole team.',
+    summary: 'Confirm auto-fail volume keeps falling after its week-3 relapse and continuation CSAT keeps climbing now that coaching is standard across the whole team.',
     rationale:
-      'CSAT has been recovering since week 2; auto-fail volume fell from its week-1 peak of 16 to 11 by week 5, but the path between is uneven (9, 11, 8, 11). The real test is whether auto-fails settle into a clean decline as coaching moves from a new habit to routine practice.',
+      'CSAT has been recovering since week 2; auto-fail volume went 14, 12, back to 14 in week 3, then 8 and 2. The real test is whether the last two weeks hold as coaching moves from a new habit to routine practice.',
     owner: 'CCM + Team Leads',
     timeline: 'Reviewed weekly',
     impact: 'A cleaner auto-fail trend here is the leading confirmation that the coaching fix is holding at team-wide scale, not just moving the metric that responds fastest.',
@@ -339,7 +339,7 @@ export const ACTION_DETAILS = {
     tone: 'amber',
     category: 'Watch next week',
     title: 'Blended CSAT vs target',
-    summary: 'Population-wide CSAT is still below target while the continuation cohort recovers. Expect this gap to close gradually as the fix compounds week over week.',
+    summary: 'Population-wide CSAT is still below target while the continuation cohort recovers. It lifted in week 5; expect the gap to keep closing gradually as the fix compounds week over week.',
     rationale:
       'Blended CSAT averages across all 3,200 weekly contacts. Continuation contacts, the ones coaching directly targets, are only 24% of that volume. It is expected to lag the continuation-contact recovery by design - this is the population-level metric that should move as more weeks of coaching accumulate.',
     owner: 'CCM + Team Leads',

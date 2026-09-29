@@ -1,0 +1,628 @@
+{
+  "_note": "Apex Utilities story spec, built from clients/apex-utilities/research.json per qiq-story-architect. One-sided, regulated-monopoly gas distribution utility — no supply-side fields present anywhere, per schema Step 1. REVISION (same day, 2026-09-15): the first draft of this spec assumed zero public reviews existed and dropped storyline slot 3 on that basis. Vansh then surfaced a Google share link that resolves to Apex's Google Business Profile — 2.5 stars, 52 reviews, missed entirely by the first research pass (it's a Search knowledge-panel listing, not a standalone review site). research.json and research.md have been corrected; this spec is revised to match. Slot 3 is back in (see storylines below), and slots 1/2 now lean on real, attributed review quotes rather than FAQ-structure inference. BOTH PRIOR OPEN ITEMS NOW RESOLVED: logo — Vansh supplied the real Apex Utilities Inc. logo PNG directly, saved to clients/apex-utilities/assets/logo.png, logoPath updated to match. Financial model framing — Vansh confirmed the cost-to-serve reframing over trying to quantify a fabricated 'brand reputation' dollar figure; see the financial block's own _note for the resolved methodology (churnUpliftPct is now solved backward from a real, computed avoidable-repeat-contact-cost figure, not a relabelled churn guess). CURRENCY DISPLAY (per Vansh, 2026-09-15): checked app/src/config/brand.js and app/src/utils/format.js directly — currency is currently just a literal symbol (NOUNS.currencySymbol) concatenated with the number, no ISO code or Intl currency formatting anywhere in the ~20 call sites that use it. A bare '$' would be visually indistinguishable from USD (every other client built so far - Rover, Kyndryl, Bed Bath & Beyond, Brooklinen - uses GBP/USD, so this hasn't come up before). Set brand.nouns.currencySymbol to 'CA$' (the standard disambiguation used by Canadian banks/retailers) instead of a bare '$', so every dollar figure in the app reads unambiguously as Canadian. Historical framing for context: FINANCIAL MODEL FRAMING (original problem statement): demandSideLtv is modelled as ~CA$1,080/year (average Alberta residential gas bill, derived from 2018 CER commodity/delivery breakdown data for ATCO Gas North/South adjusted for since-2018 inflation and carbon-levy increases — the most recent sourceable breakdown found; flagged as dated, not current-year billing data) times cohortHitWeekly=450 distinct customers/week newly hitting the dominant billing-dispute pattern, times churnUpliftPct=6. That churnUpliftPct number is a genuine modelling problem: Apex customers CANNOT switch distributor (confirmed in research — 'consumers cannot choose their distributor, it's determined by location'), so a literal 'at-risk of churning' framing is factually wrong for this client, unlike every prior client this pipeline has built (Rover, Kyndryl, Bed Bath & Beyond, Brooklinen all have real competitive churn). This is now a live financial narrative question, not a moot one — the Google reviews show real negative sentiment on exactly the categories (fees, policy rigidity) that would drive churn if switching were possible, so there's a genuine story to tell about reputational/regulatory risk even without churn in the literal sense. churnUpliftPct=6 should be read as a stand-in for 'relationship-quality erosion' (repeat-contact cost, complaint-escalation-to-AUC risk, reputational drag ahead of the next rate case), and the app's LTV-panel copy will need qiq-content-writer (or a manual copy pass) to say that explicitly rather than reusing Rover/Kyndryl's churn language verbatim — this is a review item, not resolved here. Contact volumes, driver splits, and per-contact CSAT/behaviour figures are modelled to be internally consistent with research.json, not real Apex operational data (Apex has not shared operational data with QiQ) — the Google review quotes are real, but weekly contact-centre volumes/CSAT numbers built around them are illustrative, same as every other client in this pipeline. Demo window set to the 5 weeks immediately following the real Aug 1, 2026 Phase 2 rate-class restructuring (3 Aug - 6 Sep 2026), since that regulatory change is now in effect as of today's research date (15 Sep 2026), not a future hypothetical. Palette/font are the template's default neutral palette, not Apex's real brand colours, matching the Kyndryl precedent (a QiQ demo is QiQ's product surface, not a reskin of the client's site).",
+  "client": {
+    "name": "Apex Utilities",
+    "url": "https://www.apexutilities.ca/",
+    "industry": "Regulated natural gas distribution utility (Alberta, Canada)"
+  },
+  "brand": {
+    "logoPath": "clients/apex-utilities/assets/logo.png",
+    "nouns": {
+      "demandSide": "customer",
+      "transaction": "service request",
+      "currency": "CAD",
+      "currencySymbol": "CA$",
+      "locale": "en-CA"
+    },
+    "palette": {
+      "navy": "#1a1a2e",
+      "red": "#c0392b",
+      "background": "#f5f5f3",
+      "cardBorder": "0.5px solid #e5e5e2",
+      "green": "#1a7a4a",
+      "amber": "#d97706",
+      "blue": "#2a4fa8"
+    },
+    "marketplaceType": "one-sided"
+  },
+  "businessProfile": {
+    "whatTheyDo": "Apex Utilities distributes natural gas to roughly 82,000-85,000 residential, farm, and small-commercial customers across 90+ communities in Alberta, owning about 21,000 km of distribution pipeline out of 14 district offices headquartered in Leduc, AB.",
+    "revenueModel": "Cost-of-service / performance-based (PBR) distribution rates set and approved by the Alberta Utilities Commission (AUC); customers pay a regulated distribution charge plus a pass-through gas commodity cost, with no price competition on the distribution side since Apex is the sole franchisee in its service territories.",
+    "cxRole": "trust-and-safety-critical, not a brand differentiator — gas-emergency response, billing accuracy, and clear communication of AUC-approved rate changes carry real safety and regulatory stakes, but contact-centre quality cannot drive acquisition or retention since customers cannot choose their distributor.",
+    "marketPosition": "One of Alberta's AUC-regulated gas distributors alongside ATCO Gas North and ATCO Gas South. Market share by customer count not publicly disclosed. Scope confirmed with Vansh as gas-only for this demo, despite one third-party source (Alberta's Utilities Consumer Advocate) also listing Apex among the province's regulated electricity distributors and default retailers.",
+    "competitors": [
+      {
+        "name": "ATCO Gas (North/South)",
+        "positioning": "Much larger AUC-regulated gas distributor covering the rest of Alberta; not head-to-head, but the province's natural rate/service benchmark."
+      },
+      {
+        "name": "FortisAlberta / ENMAX Power / EPCOR",
+        "positioning": "Regulated Alberta electricity distributors that set the province-wide bar for what an Albertan expects from 'their utility,' despite the different commodity."
+      },
+      {
+        "name": "Direct Energy / ATCO Energy / other competitive retailers",
+        "positioning": "Compete for the retail commodity-supply contract layered on top of Apex's fixed distribution service; a customer can switch retailer but not distributor, so retailer confusion can still land as a misdirected call to Apex."
+      }
+    ],
+    "recentMoves": [
+      {
+        "date": "2026-08-01",
+        "summary": "Phase 2 rate restructuring took effect: Rate 1 redefined as under 4,000 GJ/year, Rate 2 (over 4,000 GJ) now mandatory for qualifying usage, irrigation accounts harmonized into Rate 1. Apex's FAQ spends 10 questions explaining it.",
+        "source": "https://www.apexutilities.ca/faqs/"
+      },
+      {
+        "date": "2025 construction season",
+        "summary": "System Betterment Program completed confirmed pipe-replacement work in the Towns of High Level and Hanna and in Sturgeon County, with Apex's stated process being advance customer notices plus local-newspaper/social updates during the work.",
+        "source": "https://www.apexutilities.ca/construction-projects/"
+      },
+      {
+        "date": "2025-12 (approx.)",
+        "summary": "AUC Decision 30302-D01-2025 set Apex's 2026 Annual PBR rate.",
+        "source": "https://prd-api-efiling20.auc.ab.ca/Anonymous/DownloadPublicDocumentAsync/848581"
+      }
+    ],
+    "targetSegments": [
+      "Residential homeowners",
+      "Small businesses",
+      "Large energy users (Rate 2)",
+      "Developers and builders",
+      "Landlords",
+      "Municipal and rural franchises",
+      "First Nations communities and Métis Settlements",
+      "Irrigation accounts"
+    ]
+  },
+  "population": {
+    "weeklyTotalContacts": 3200,
+    "weeksInPeriod": 5,
+    "estimatedPopulation": 16000,
+    "extractSize": 800,
+    "extractCoveragePct": 5.0,
+    "voiceContacts": 1856,
+    "voiceSharePct": 58.0,
+    "messagingContacts": 1344,
+    "messagingSharePct": 42.0,
+    "firstContacts": 2432,
+    "continuationContacts": 768,
+    "continuationSharePct": 24.0,
+    "weekAnchor": "2026-08-03"
+  },
+  "kpis": {
+    "current": {
+      "aht": {
+        "voice": 480,
+        "messaging": 260,
+        "blended": 380,
+        "target": 320
+      },
+      "fcrPct": {
+        "voice": 71.0,
+        "messaging": 66.0,
+        "blended": 68.5,
+        "target": 80.0
+      },
+      "escalationRatePct": {
+        "voice": 9.5,
+        "messaging": 5.5,
+        "blended": 7.2,
+        "target": 4.0
+      },
+      "csat": {
+        "voice": 4.0,
+        "messaging": 3.7,
+        "blended": 3.85,
+        "target": 4.4
+      },
+      "nps": {
+        "voice": 18,
+        "messaging": 10,
+        "blended": 14,
+        "target": 35
+      },
+      "repeatContactRatePct": {
+        "voice": 19.0,
+        "messaging": 23.0,
+        "blended": 21.2,
+        "target": 12.0
+      },
+      "transferRatePct": {
+        "voice": 14.0,
+        "messaging": 8.0,
+        "blended": 10.6,
+        "target": 6.0
+      }
+    },
+    "fiveWeekTrend": {
+      "weeks": [
+        "3-9 Aug",
+        "10-16 Aug",
+        "17-23 Aug",
+        "24-30 Aug",
+        "31 Aug-6 Sep"
+      ],
+      "csat": [
+        3.71,
+        3.8,
+        3.73,
+        3.67,
+        4.03
+      ],
+      "repeatContactRatePct": [
+        17.5,
+        19.0,
+        20.5,
+        21.8,
+        22.6
+      ]
+    }
+  },
+  "firstVsContinuation": {
+    "csat": {
+      "first": 4.3,
+      "continuation": 2.3
+    },
+    "ahtSeconds": {
+      "first": 340,
+      "continuation": 260
+    },
+    "behaviourScore": {
+      "first": 4.3,
+      "continuation": 2.6
+    },
+    "qaScorecardPct": {
+      "first": 92.0,
+      "continuation": 88.0
+    },
+    "processAdherencePct": {
+      "first": 95,
+      "continuation": 90
+    },
+    "resolutionRatePct": {
+      "first": 88,
+      "continuation": 75
+    }
+  },
+  "behaviourPillars": {
+    "clarityOfCommunication": {
+      "first": 4.4,
+      "continuation": 3.6
+    },
+    "ownershipOfTheIssue": {
+      "first": 4.2,
+      "continuation": 2.4
+    },
+    "listeningAndResponsiveness": {
+      "first": 4.3,
+      "continuation": 3.2
+    },
+    "professionalismAndCourtesy": {
+      "first": 4.6,
+      "continuation": 4.4
+    },
+    "empathyAndAcknowledgement": {
+      "first": 4.3,
+      "continuation": 2.3
+    },
+    "managingFrustration": {
+      "first": 4.1,
+      "continuation": 2.5
+    }
+  },
+  "drivers": [
+    {
+      "name": "Rate Class / Bill Impact Questions (Phase 2 Change)",
+      "volume": 576,
+      "sharePct": 18.0,
+      "fcrPct": 60,
+      "ahtSeconds": 410,
+      "escalationPct": 10,
+      "side": "demand"
+    },
+    {
+      "name": "Billing & Fee Dispute Escalations",
+      "volume": 512,
+      "sharePct": 16.0,
+      "fcrPct": 51,
+      "ahtSeconds": 460,
+      "escalationPct": 17,
+      "side": "demand"
+    },
+    {
+      "name": "Budget Billing (Equalization Plan) Enrollment & Adjustments",
+      "volume": 416,
+      "sharePct": 13.0,
+      "fcrPct": 63,
+      "ahtSeconds": 360,
+      "escalationPct": 9,
+      "side": "demand"
+    },
+    {
+      "name": "Start / Stop / Move / Payment / Account Access",
+      "volume": 448,
+      "sharePct": 14.0,
+      "fcrPct": 82,
+      "ahtSeconds": 270,
+      "escalationPct": 2,
+      "side": "demand"
+    },
+    {
+      "name": "Estimated vs. Actual Meter Read Disputes",
+      "volume": 320,
+      "sharePct": 10.0,
+      "fcrPct": 66,
+      "ahtSeconds": 370,
+      "escalationPct": 7,
+      "side": "demand"
+    },
+    {
+      "name": "System Betterment / Construction Project Notifications",
+      "volume": 256,
+      "sharePct": 8.0,
+      "fcrPct": 55,
+      "ahtSeconds": 310,
+      "escalationPct": 9,
+      "side": "demand"
+    },
+    {
+      "name": "General Gas Safety & Appliance Questions (Non-Emergency)",
+      "volume": 224,
+      "sharePct": 7.0,
+      "fcrPct": 88,
+      "ahtSeconds": 280,
+      "escalationPct": 1,
+      "side": "demand"
+    },
+    {
+      "name": "Gas Emergency / No-Heat / Leak Response",
+      "volume": 160,
+      "sharePct": 5.0,
+      "fcrPct": 91,
+      "ahtSeconds": 520,
+      "escalationPct": 3,
+      "side": "demand"
+    },
+    {
+      "name": "Missing Bill / Account Reconciliation Issues",
+      "volume": 96,
+      "sharePct": 3.0,
+      "fcrPct": 41,
+      "ahtSeconds": 540,
+      "escalationPct": 24,
+      "side": "demand"
+    },
+    {
+      "name": "Other / Miscellaneous",
+      "volume": 192,
+      "sharePct": 6.0,
+      "fcrPct": 79,
+      "ahtSeconds": 260,
+      "escalationPct": 3,
+      "side": "demand"
+    }
+  ],
+  "storylines": [
+    {
+      "slot": 1,
+      "incidentId": "INC-2026-BILLDISPUTE",
+      "title": "Billing and fee disputes escalate on top of an already-strained rate-change season",
+      "shareOfContactsPct": 34.0,
+      "coachable": true,
+      "contacts": [
+        {
+          "seq": 1,
+          "side": "demand",
+          "channel": "voice",
+          "date": "2026-08-11",
+          "csat": 4,
+          "behaviour": 4.3,
+          "qaPct": 92,
+          "ahtSeconds": 430
+        },
+        {
+          "seq": 2,
+          "side": "demand",
+          "channel": "voice",
+          "date": "2026-08-14",
+          "csat": 2,
+          "behaviour": 2.6,
+          "qaPct": 88,
+          "ahtSeconds": 480
+        },
+        {
+          "seq": 3,
+          "side": "demand",
+          "channel": "messaging",
+          "date": "2026-08-19",
+          "csat": 1,
+          "behaviour": 2.1,
+          "qaPct": 86,
+          "ahtSeconds": 240
+        },
+        {
+          "seq": 4,
+          "side": "demand",
+          "channel": "voice",
+          "date": "2026-08-21",
+          "csat": 1,
+          "behaviour": 2.0,
+          "qaPct": 85,
+          "ahtSeconds": 510
+        }
+      ],
+      "stats": {
+        "shareNote": "Rate Class / Bill Impact Questions (18.0%) and Billing & Fee Dispute Escalations (16.0%) are two standalone categories that combine to 34.0% of weekly volume — reported together here because research.json's Google reviews evidence shows they're the same underlying pattern (billing/fee disagreements that escalate into complaints about agent tone and policy rigidity), not because they're one category; see externally-evidenced quotes below.",
+        "realEvidenceNote": "Grounded in strong-confidence, directly quoted Google reviews (2.5-star profile, 52 reviews): a customer billed CA$3,143 in fees against CA$488 of actual gas use; a vacant-property customer charged a daily distribution fee for zero usage; multiple reviews independently describing phone agents as rude or unhelpful when these disputes come up. The Aug 1, 2026 Phase 2 rate restructuring is a real, dated trigger landing on top of an already-known-difficult category, not the storyline's sole basis."
+      }
+    },
+    {
+      "slot": 2,
+      "incidentId": "INC-2026-MISSINGBILL",
+      "title": "An account falls through the billing cracks, then lands a CA$1,800 surprise",
+      "shareOfContactsPct": 3.0,
+      "coachable": true,
+      "contacts": [
+        {
+          "seq": 1,
+          "side": "demand",
+          "channel": "voice",
+          "date": "2026-08-15",
+          "csat": 3,
+          "behaviour": 3.4,
+          "qaPct": 90,
+          "ahtSeconds": 380
+        },
+        {
+          "seq": 2,
+          "side": "demand",
+          "channel": "voice",
+          "date": "2026-08-28",
+          "csat": 1,
+          "behaviour": 1.9,
+          "qaPct": 84,
+          "ahtSeconds": 620
+        },
+        {
+          "seq": 3,
+          "side": "demand",
+          "channel": "messaging",
+          "date": "2026-09-02",
+          "csat": 1,
+          "behaviour": 2.2,
+          "qaPct": 86,
+          "ahtSeconds": 260
+        }
+      ],
+      "stats": {
+        "shareNote": "Only 3.0% of weekly volume (Missing Bill / Account Reconciliation Issues), but disproportionate CSAT damage when it happens — this taxonomy row has the lowest FCR (41%) and highest escalation rate (24%) of any driver.",
+        "realEvidenceNote": "Directly grounded in a real Google review: 8 months with no bill sent, service then cut off for 'non-payment,' followed by an unexplained CA$1,800 back-bill, with the customer questioning how a meter reading was even taken on an account the company said didn't exist. Rare, but the sharpest single CSAT collapse of any pattern found in research."
+      }
+    },
+    {
+      "slot": 3,
+      "incidentId": "INC-2026-EXTCORR",
+      "title": "Fee-dispute contact volume leads a rise in Google review mentions of fees and policy",
+      "shareOfContactsPct": 16.0,
+      "coachable": true,
+      "contacts": [],
+      "stats": {
+        "closedNoResolutionPathPct": 31,
+        "repeatContactRatePctThisCohort": 29,
+        "repeatContactRatePctOverall": 21.2,
+        "escalationRatePct": 17,
+        "behaviourOwnershipScore": 2.6,
+        "note": "Grounded in research.json's real Google Business Profile (2.5 stars, 52 reviews) — Google's own topic tags on the listing include 'fees' and 'policy' among the review categories it surfaces. Weekly mention counts below are modelled/illustrative (as with every client this pipeline has built), scaled to the small size of a 52-review profile rather than a high-volume consumer brand's review corpus — the rating and the theme tags are real, the week-by-week cadence is not."
+      },
+      "externalCorrelation": {
+        "theme": "fee and billing-policy complaints (Google review topic tags: fees, policy)",
+        "mentionsThisWeek": 4,
+        "mentionsPriorWeek": 1,
+        "correlationCoefficient": 0.69,
+        "lagDays": 9
+      }
+    },
+    {
+      "slot": 4,
+      "incidentId": "INC-2026-SYSBETTER",
+      "title": "Construction-window confusion during system betterment pipe replacement",
+      "shareOfContactsPct": 8.0,
+      "coachable": false,
+      "contacts": [],
+      "stats": {
+        "customersRecallingAdvanceNoticePct": 61,
+        "avoidableContactsWeekly": 158,
+        "avgDaysBetweenNoticeAndWorkStart": 4.2,
+        "csat": 2.9,
+        "ahtSeconds": 310,
+        "note": "Cross-team coordination gap between engineering scheduling, customer notifications, and the contact centre — not a behavioural one. Grounded in research.json's confirmed 2025 System Betterment Program work in the Towns of High Level and Hanna and Sturgeon County, and Apex's own stated notification process (advance notices with timelines/contact info, then local-newspaper and social updates during the work). Won't respond to Micro Coaching — this is the storyline that keeps the rest of the demo honest."
+      }
+    }
+  ],
+  "coaching": {
+    "appliedFromWeek": 2,
+    "effectSeriesCsat": [
+      2.0,
+      2.1,
+      2.2,
+      2.4,
+      2.8
+    ],
+    "topics": [
+      {
+        "key": "open_with_incident",
+        "title": "Start Where They Left Off",
+        "affectedKpis": [
+          "csat",
+          "repeatContactRate"
+        ],
+        "customerRisk": true,
+        "contentType": "scenario_example"
+      },
+      {
+        "key": "match_register",
+        "title": "Let the Dispute Set the Tone",
+        "affectedKpis": [
+          "csat"
+        ],
+        "customerRisk": true,
+        "contentType": "scenario_example"
+      },
+      {
+        "key": "route_forward",
+        "title": "Name Who Has It and When",
+        "affectedKpis": [
+          "repeatContactRate",
+          "fcr"
+        ],
+        "customerRisk": true,
+        "contentType": "trigger_action_reminder"
+      },
+      {
+        "key": "acknowledge_effort",
+        "title": "Count the Chasing",
+        "affectedKpis": [
+          "csat",
+          "repeatContactRate"
+        ],
+        "customerRisk": false,
+        "contentType": "trigger_action_reminder"
+      }
+    ],
+    "applyEffectToDataset": true,
+    "_effectNote": "2026-09-29: applyEffectToDataset turned on so the continuation-CSAT recovery is in the generated contacts. Series mean 2.3 = firstVsContinuation.csat.continuation, so period averages don't move (previous authored series 2.3-3.4 was never in the data)."
+  },
+  "financial": {
+    "_note": "REFRAMED (per Vansh, 2026-09-15): the app's computeLtvFinancials() formula (app/src/utils/ltvFinancial.js) is just cohortHitWeekly * (churnUpliftPct/100) * demandSideLtv * 52 - it doesn't care what churnUpliftPct means semantically, only qiq-content-writer's copy (data/ltvCopy.js) does. So instead of relabelling a fake churn number, churnUpliftPct is now solved backward from a real, directly-computed avoidable-cost figure: assume CA$6 per contact (blended BPO agent-time estimate - NOT a real Quantanite-supplied cost-per-contact figure, correct if Vansh has one) and 1 avoidable extra contact per affected customer. Annual avoidable repeat-contact cost = cohortHitWeekly(450) * 52 weeks * 1 contact * CA$6 = CA$140,400. churnUpliftPct = 140400 / (450*52*1080) * 100 = 0.56, chosen so the app's existing formula reproduces that CA$140,400 as its primary figure (total ~CA$171K once the panel's standard 1.22x secondary/tertiary weighting is applied). ACTION NEEDED AT STAGE 4 (qiq-content-writer): the LTV panel's label/copy must change from churn language ('Customer Churn Risk', 'at risk of leaving') to cost-to-serve language ('Avoidable Cost-to-Serve Exposure' or similar) - the number is now correct, the label is not, until that copy pass happens.",
+    "demandSideLtv": 1080,
+    "cohortHitWeekly": 450,
+    "churnUpliftPct": 0.56
+  },
+  "external": {
+    "platform": "Google Business Profile reviews",
+    "rating": 2.5,
+    "label": null,
+    "reviewCount": 52,
+    "sourceUrl": "https://www.google.com/maps/place/Apex+Utilities+Inc./@53.2698008,-113.5427743,17z/data=!4m8!3m7!1s0x417034952dad57e3:0x46aa1efe2dfd8cb5!8m2!3d53.2698008!4d-113.5427743!9m1!1b1",
+    "reviewsExamined": 10,
+    "themes": [
+      {
+        "theme": "rude_or_unhelpful_call_center_staff",
+        "frequencyNote": "Recurring across 4 of 10 reviews read.",
+        "severity": "high",
+        "confidence": "strong",
+        "quotes": [
+          {
+            "text": "Every time I call the customer service number to get help with my account I always encounter a rude service agent that acts as though I am inconveniencing them.",
+            "source": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUM3cEtDZ3V3RRAB!2m1!1s0x0:0x46aa1efe2dfd8cb5!3m1!1s2@1:ChdDSUhNMG9nS0VJQ0FnSUM3cEtDZ3V3RRAB - M L, 1 star, about 2 years ago"
+          },
+          {
+            "text": "This is by far the rudest, most incompetent customer service I have ever dealt with. They lie to you.",
+            "source": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUN1eXE2THBBRRAB!2m1!1s0x0:0x46aa1efe2dfd8cb5!3m1!1s2@1:ChdDSUhNMG9nS0VJQ0FnSUN1eXE2THBBRRAB - Jules Sommer, 1 star, about 4 years ago"
+          }
+        ],
+        "title": "Rude or unhelpful phone agents"
+      },
+      {
+        "theme": "billing_and_fee_disputes",
+        "frequencyNote": "Recurring across 4 of 10 reviews read, with specific dollar figures.",
+        "severity": "high",
+        "confidence": "strong",
+        "quotes": [
+          {
+            "text": "I have used $488 worth of gas and been charged $3143 in fees!!! 86.5% of the bills are fees. That's unacceptable.",
+            "source": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUN1eXE2THBBRRAB!2m1!1s0x0:0x46aa1efe2dfd8cb5!3m1!1s2@1:ChdDSUhNMG9nS0VJQ0FnSUN1eXE2THBBRRAB - Jules Sommer, 1 star, about 4 years ago"
+          },
+          {
+            "text": "Despite 0 GJ usage for a vacant property, they bill out 1.567/day for distribution charge.",
+            "source": "https://www.google.com/maps/place/Apex+Utilities+Inc./@53.2698008,-113.5427743,17z/data=!4m8!3m7!1s0x417034952dad57e3:0x46aa1efe2dfd8cb5!8m2!3d53.2698008!4d-113.5427743!9m1!1b1 - Apex Utilities Inc. Google listing (this review isn't individually linkable), Mike Kruger, 1 star"
+          }
+        ],
+        "title": "Fees that dwarf the gas used"
+      },
+      {
+        "theme": "budget_billing_confusion",
+        "frequencyNote": "Directly evidenced, not just FAQ-inferred.",
+        "severity": "medium",
+        "confidence": "strong",
+        "quotes": [
+          {
+            "text": "they are the ones that set it up, change it without notice or consultation then drop a 600 dollar bill on you saying you aren't paying enough",
+            "source": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUN1cHJyby13RRAB!2m1!1s0x0:0x46aa1efe2dfd8cb5!3m1!1s2@1:ChdDSUhNMG9nS0VJQ0FnSUN1cHJyby13RRAB - Ken Neuts, 1 star, about 4 years ago"
+          }
+        ],
+        "title": "Budget billing changed without notice"
+      },
+      {
+        "theme": "missing_bills_then_surprise_backbill",
+        "frequencyNote": "One detailed account: 8 months unbilled, then a CA$1,800 back-bill after service was cut.",
+        "severity": "high",
+        "confidence": "moderate",
+        "quotes": [
+          {
+            "text": "They did not send us bills for 8 months ... now they sent us after a month of inquiry a $1800 plus bill!!!",
+            "source": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSURPbzRYLWZREAE!2m1!1s0x0:0x46aa1efe2dfd8cb5!3m1!1s2@1:ChZDSUhNMG9nS0VJQ0FnSURPbzRYLWZREAE - Marianne Volk, 1 star, about 4 years ago"
+          }
+        ],
+        "title": "Months without a bill, then a back-bill"
+      },
+      {
+        "theme": "field_emergency_response_is_a_genuine_strength",
+        "frequencyNote": "Positive finding: 2 of 10 reviews are 5-star praise naming individual field technicians.",
+        "severity": "low",
+        "confidence": "strong",
+        "quotes": [
+          {
+            "text": "Someone called me within minutes letting me know a tech would arrive within 30 mins. John and Layla ... went above and beyond.",
+            "source": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSURMdHVLdk9BEAE!2m1!1s0x0:0x46aa1efe2dfd8cb5!3m1!1s2@1:ChZDSUhNMG9nS0VJQ0FnSURMdHVLdk9BEAE - Alana Shilleto, 5 stars, about 2 years ago"
+          }
+        ],
+        "title": "Gas-leak response praised by name (positive)"
+      },
+      {
+        "theme": "province_wide_bill_affordability_frustration",
+        "frequencyNote": "Well-sourced as an Alberta-wide trend (+40% residential electricity costs 2020-2024, sharpest in Canada) but not Apex-specific and not about gas distribution rates.",
+        "severity": "medium",
+        "confidence": "moderate",
+        "quotes": [],
+        "title": "Province-wide bill affordability pressure"
+      },
+      {
+        "theme": "construction_disruption_notification_effectiveness",
+        "frequencyNote": "Grounded in a confirmed real event (2025 System Betterment Program work in High Level, Hanna, Sturgeon County), not directly evidenced in the reviews read.",
+        "severity": "medium",
+        "confidence": "moderate",
+        "quotes": [],
+        "title": "Construction notice effectiveness"
+      },
+      {
+        "theme": "rate_class_reclassification_aug_2026",
+        "frequencyNote": "Regulatory change is now in effect (Aug 1, 2026); none of the reviews read predate or reflect it, but flagged given 10 FAQ questions devoted to explaining it and direct customer notifications going out.",
+        "severity": "high",
+        "confidence": "weak",
+        "quotes": [],
+        "title": "August 2026 rate-class change"
+      }
+    ],
+    "reviewsExaminedNote": "10 of the 52 reviews on Apex Utilities Inc.'s Google Business Profile (Leduc head office) read in full. Trustpilot, Reddit and BBB Canada have no Apex Utilities (Alberta) profile."
+  },
+  "heroNarrativeDraft": {
+    "_note": "Draft hero narrative arc for qiq-content-writer to render into content/executiveConstants.js HERO_CONTENT, following the Kyndryl precedent where the story spec itself carries no dedicated hero field but the draft is handed forward here.",
+    "headline": "The bill disputes were already a problem. The rate change just landed on top of them.",
+    "paragraph1": "Billing and fee disputes, including the wave of Rate Class / Bill Impact Questions triggered by the August 1 Phase 2 rate restructuring, are 34% of Apex's weekly contact volume combined, and independently evidenced on Apex's own public Google reviews: a 2.5-star profile with recurring complaints about disproportionate fees and rude phone handling, not a hypothesis. Most of these contacts start as a first call that resolves cleanly - first-contact CSAT is 4.3. The pattern breaks on the callback: continuation CSAT for the same customers drops to 2.3, and repeat-contact rate for this cohort has climbed from 17.5% to 22.6% over five weeks.",
+    "paragraph2": "Micro Coaching targeting clarity-of-communication and ownership on repeat contacts was applied from week 2; continuation CSAT begins recovering (2.0 in week 1 to 2.9 by week 5). Two things this doesn't fix: the rare but severe case of an account falling through the billing cracks entirely (one real customer went 8 months unbilled, then received an unexplained CA$1,800 back-bill), and the System Betterment construction-notification gap, a cross-team process issue between engineering scheduling and customer comms that behavioural coaching alone won't close. One genuine bright spot worth keeping in the story: Apex's field emergency-response team is already a strength, not a weakness - the same public reviews that complain about billing separately praise named technicians for fast, professional gas-leak response. The damage is concentrated in the phone/billing side of the house, not the field side."
+  },
+  "designSystem": {
+    "font": "DM Sans",
+    "navy": "#1a1a2e",
+    "red": "#c0392b",
+    "background": "#f5f5f3",
+    "cardBorder": "0.5px solid #e5e5e2",
+    "green": "#1a7a4a",
+    "amber": "#d97706",
+    "blue": "#2a4fa8"
+  },
+  "methodology": {
+    "financialSource": "Assumed CA$6 cost per handled contact (a blended estimate, not an Apex figure) and one avoidable repeat contact per affected customer; affected customers per week are modelled",
+    "financialProvenance": "Synthetic",
+    "coachingFromDataset": true
+  }
+}

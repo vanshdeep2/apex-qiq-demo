@@ -17,6 +17,9 @@ import {
   WK_LABELS,
 } from './agentMetrics'
 
+/** Display names for card affectedKpis keys (same map as MicroCoachingCard). */
+const KPI_LABELS = { csat: 'CSAT', fcr: 'FCR', aht: 'AHT', repeat_contact_rate: 'Repeat contacts' }
+
 export { WK_LABELS, COACHING_WEEK_INDEX, TEAM_AGGREGATES, FLAGGED_AGENT_SLUGS, CARD_SHAPE_LABELS }
 
 export const AGENT_ORDER = AGENT_METRIC_ORDER
@@ -96,7 +99,7 @@ export const AGENTS = Object.fromEntries(
           topic: card.title,
           type: card.priorityRank === 1 ? 'priority' : 'development',
           content: card.coachingFocus,
-          evidence: `Rank ${card.priorityRank} · ${card.affectedKpis.join(', ')}`,
+          evidence: `Rank ${card.priorityRank} · ${card.affectedKpis.map((k) => KPI_LABELS[k] ?? k).join(', ')}`,
           cheatCodeId: card.cardId,
           lms: null,
         })),

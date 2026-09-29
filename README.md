@@ -1,16 +1,15 @@
-# React + Vite
+# Apex Utilities QiQ demo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + Vite demo app for QiQ (Quantanite iQ) client intelligence, built around a synthetic Apex Utilities contact-centre dataset.
 
-Currently, two official plugins are available:
+- The app sits at the root of this folder. Run `npm install`, then `npm run dev`. `dist/` is a production build ready for any static host, with `vercel.json` included.
+- `docs/` holds the research, story spec, methodology table, transcript content, and the QA and audit reports for this build.
+- `Apex Utilities - Client Research & Demo Storylines.docx` is the internal research and storylines doc for the sales team.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Scope: Apex Utilities' customer contact centre, for its Alberta natural gas distribution business (rate-class and billing questions, fee disputes, budget billing, moves and account changes, meter reads, construction notices, and gas-safety and emergency calls). Contact-centre numbers are modelled/synthetic. Dollar figures are Canadian (CA$).
 
-## React Compiler
+## Real vs synthetic
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- The research doc opens with **How This Demo Was Built**, a table of what's real (Apex Utilities Inc.'s Google reviews, rating and public company, regulatory and construction facts) and what's modelled (the contact centre), with the scale of each.
+- The app has a **Voice of the Customer** page (`/voc`) that shows only real, public data. Every page carries a Public / Modelled / Public + modelled badge, and a **How this demo was built** button in the nav opens the same table as the doc.
+- Review links: 6 of the 7 quoted Google reviews link to the review itself. One (Mike Kruger's vacant-property review) couldn't be linked individually, so it links to Apex Utilities Inc.'s Google Maps listing, and the page says so. Google shows review dates only as relative ages ("about 2 years ago"), so quotes carry an age rather than a date.

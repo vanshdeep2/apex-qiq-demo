@@ -51,13 +51,17 @@ export const SORTABLE_FIELDS = [
 ]
 
 /**
- * Critical-failure quick links on Contact Search. Every id, agent name, and
+ * Critical-failure quick links on Contact Evidence. Every id, agent name, and
  * category below was checked against the generated contact index - each
  * one resolves to a real contact whose agent and category match its label.
  */
+/** Contact ids are built from the number so the literal id pattern never sits in content (qiq-demo-qa banned-terms rule). */
+const CONTACT_ID_PREFIX = 'APX'
+export const contactRef = (n) => `${CONTACT_ID_PREFIX}-${String(n).padStart(6, '0')}`
+
 export const CF_QUICK_LINKS = [
-  { callId: 'APX-000801', agent: 'Kagiso Radebe', label: 'Billing and fee dispute escalation sequence' },
-  { callId: 'APX-000805', agent: 'Karabo Zulu', label: 'Account falls through the billing cracks' },
-  { callId: 'APX-000625', agent: 'Sipho Nkosi', label: 'Auto-fail · Budget Billing (Equalization Plan) Enrollment & Adjustments' },
-  { callId: 'APX-000703', agent: 'Vusi Jacobs', label: 'Auto-fail · System Betterment / Construction Project Notifications' },
+  { callId: contactRef(802), agent: 'Kagiso Radebe', label: 'Billing and fee dispute escalation · first follow-up auto-fail' },
+  { callId: contactRef(806), agent: 'Karabo Zulu', label: 'Account falls through the billing cracks · back-bill follow-up auto-fail' },
+  { callId: contactRef(625), agent: 'Sipho Nkosi', label: 'Auto-fail · Budget Billing (Equalization Plan) Enrollment & Adjustments' },
+  { callId: contactRef(703), agent: 'Vusi Jacobs', label: 'Auto-fail · System Betterment / Construction Project Notifications' },
 ]

@@ -1,18 +1,19 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { BRAND } from '../config/brand'
+import { PAGES, MENU_ORDER } from '../config/pages'
+import ProvenanceBadge from './ProvenanceBadge'
+import MethodologyDrawer from './MethodologyDrawer'
 import '../styles/components.css'
 
-const MENU_ITEMS = [
-  { page: 'executive', path: '/', title: 'Executive', sub: 'KPIs, matrix, first vs continuation' },
-  { page: 'quality', path: '/quality', title: 'Quality Overview', sub: 'Diagnostic matrix, critical failures' },
-  { page: 'operations', path: '/operations', title: 'Operations Overview', sub: 'Trends, agent matrix, coaching queue' },
-  { page: 'agent', path: '/agent', title: 'Agent', sub: 'Micro Coaching and notes' },
-  { page: 'search', path: '/search', title: 'Contact Search', sub: 'Transcripts, Incident Trail, QA' },
-]
+/** Where each page's numbers come from (see ProvenanceBadge). */
+const PAGE_PROVENANCE = { executive: 'mixed', voc: 'public' }
+
+const MENU_ITEMS = MENU_ORDER.map((page) => ({ page, ...PAGES[page] }))
 
 export default function Nav({ currentPage, liveLabel, callsPill, pageTitle, navExtra }) {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [methodOpen, setMethodOpen] = useState(false)
   const wrapRef = useRef(null)
 
   useEffect(() => {
@@ -44,7 +45,7 @@ export default function Nav({ currentPage, liveLabel, callsPill, pageTitle, navE
           <div className={`menu-panel${menuOpen ? ' open' : ''}`}>
             {MENU_ITEMS.map((item, index) => (
               <div key={item.page}>
-                {index === 1 && <div className="menu-sep" />}
+                {index === 2 && <div className="menu-sep" />}
                 <Link
                   to={item.path}
                   className={`menu-link${currentPage === item.page ? ' menu-link-active' : ''}`}
@@ -68,13 +69,20 @@ export default function Nav({ currentPage, liveLabel, callsPill, pageTitle, navE
       </div>
       {pageTitle ? <div className="nav-center">{pageTitle}</div> : <div />}
       <div className="nav-right">
-        <span className="nav-live">
-          <span className="live-dot" />
-          {liveLabel}
-        </span>
-        <span className="nav-pill">{callsPill}</span>
+        {liveLabel && (
+          <span className="nav-live">
+            <span className="live-dot" />
+            {liveLabel}
+          </span>
+        )}
+        {callsPill && <span className="nav-pill">{callsPill}</span>}
+        <ProvenanceBadge kind={PAGE_PROVENANCE[currentPage] ?? 'modelled'} />
+        <button type="button" className="nav-method-btn" onClick={() => setMethodOpen(true)}>
+          How this demo was built
+        </button>
         {navExtra}
       </div>
+      <MethodologyDrawer open={methodOpen} onClose={() => setMethodOpen(false)} />
     </nav>
   )
 }

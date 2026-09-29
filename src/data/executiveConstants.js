@@ -10,10 +10,12 @@
  * data - Apex Utilities has not shared operational data with QiQ.
  */
 
+import { AGENT_METRICS, TEAM_AGGREGATES } from './agentMetrics'
+
 export const LIVE_LABEL = 'Live · 5-week window'
 export const CALLS_PILL = '16,000 contacts analysed'
 export const EXTRACT_NOTE =
-  'Contact Search carries an 800-record working extract of the 16,000-contact population.'
+  'Contact Evidence carries an 800-record working extract of the 16,000-contact population.'
 
 export const PERIOD_LABEL = '3 Aug - 6 Sep 2026'
 export const WK_LABELS = ['3-9 Aug', '10-16 Aug', '17-23 Aug', '24-30 Aug', '31 Aug-6 Sep']
@@ -60,15 +62,15 @@ export const DEFAULTS = {
 }
 
 /**
- * Blended CSAT slides gently across the period (story-spec.kpis.fiveWeekTrend.csat).
- * Do not draw a recovery curve here: population-level CSAT has not turned yet.
- * The metric that does respond to coaching so far is the continuation-cohort
- * CSAT curve (see COACHING_EFFECT_CSAT in ccmConstants, sourced from
- * story-spec.coaching.effectSeriesCsat).
+ * Blended CSAT by week (story-spec.kpis.fiveWeekTrend.csat), set on 2026-09-29
+ * to the weekly means of the generated contact extract: flat around 3.7 for
+ * four weeks, lifting to 4.0 in week 5 as the continuation cohort recovers.
+ * The metric that responds to coaching first is the continuation-cohort CSAT
+ * curve (CONTINUATION_CSAT_RECOVERY below).
  */
 export const FIVE_WEEK_TREND = {
   weeks: WK_LABELS,
-  csat: [4.1, 3.9, 3.8, 3.7, 3.6],
+  csat: [3.71, 3.8, 3.73, 3.67, 4.03],
   rcr: [17.5, 19.0, 20.5, 21.8, 22.6],
   // Illustrative interpolation ending on KPIS.escalation.blended (7.2) - not a
   // separately sourced weekly figure, story-spec only carries the current value.
@@ -101,29 +103,33 @@ export const COACHING_WEEK_INDEX = 1 // week 2, 0-indexed
 
 /**
  * Team-wide critical/auto-fail QA outcomes, summed by week across all ten
- * agents in agentMetrics.js (criticalFailureSeries). Week 1 is the worst
- * week, not a clean decline into coaching - the honest finding is that
- * continuation CSAT is recovering (see coaching.effectSeriesCsat) while
- * auto-fail volume, though down from its week-1 peak, has not settled into
- * a clean downward line. Reported as-is, not smoothed into a success curve.
+ * agents in agentMetrics.js (criticalFailureSeries), computed here so it can't
+ * drift from the dataset: 14 → 12 → 14 → 8 → 2. Week 3 climbs back to the
+ * week-1 level before the decline takes hold. Reported as-is, not smoothed
+ * into a success curve.
  */
+const CF_WEEKLY_TEAM = [0, 1, 2, 3, 4].map((w) =>
+  Object.values(AGENT_METRICS).reduce((n, m) => n + m.criticalFailureSeries[w], 0),
+)
 export const CRITICAL_FAILURES = {
-  weekly: [16, 9, 11, 8, 11],
-  totalThisPeriod: 55,
-  currentWeek: 11,
-  peakWeek: 16,
+  weekly: CF_WEEKLY_TEAM,
+  totalThisPeriod: TEAM_AGGREGATES.criticalFailuresTotal,
+  currentWeek: CF_WEEKLY_TEAM[4],
+  peakWeek: Math.max(...CF_WEEKLY_TEAM),
   category:
     'Auto-fail outcomes concentrated on follow-up contacts on rate-class and billing/fee disputes opened without acknowledging the prior contact, and Start/Stop/Move/Payment contacts closed without a named next step',
 }
 
 /**
- * Continuation-cohort CSAT since coaching started, copied directly from
- * story-spec.coaching.effectSeriesCsat - not computed here.
+ * Continuation-cohort CSAT by week, measured from the generated contact
+ * extract (contact_sequence > 1). story-spec.coaching.applyEffectToDataset is
+ * on, so the recovery is in the contacts themselves; the series averages 2.3,
+ * the period continuation CSAT quoted everywhere else.
  */
 export const CONTINUATION_CSAT_RECOVERY = {
-  weekly: [2.3, 2.5, 2.8, 3.1, 3.4],
-  startValue: 2.3,
-  currentValue: 3.4,
+  weekly: [2.0, 2.06, 2.11, 2.43, 2.88],
+  startValue: 2.0,
+  currentValue: 2.9,
 }
 
 /** story-spec.firstVsContinuation.qaScorecardPct.continuation, direct field lookup, no computation. */
@@ -223,11 +229,11 @@ export const CROSS_KPI_PATTERNS = [
     headline: 'Billing and fee disputes escalate on top of an already-strained rate-change season',
     body: 'First-contact CSAT 4.3 vs continuation 2.3 while QA barely moves, 92.0% to 88.0%. Per-contact scorecards cannot see the dispute history.',
     rootCause:
-      'Rate Class / Bill Impact Questions (18.0%) and Billing & Fee Dispute Escalations (16.0%) combine to 34.0% of weekly volume, and this is not a hypothesis - it is independently evidenced on Apex’s own public Google Business Profile (2.5 stars, 52 reviews): a customer billed CA$3,143 in fees against CA$488 of actual gas use, a vacant-property customer charged a daily distribution fee for zero usage, and recurring complaints describing phone agents as rude or unhelpful when these disputes come up. One customer’s dispute sequence shows the pattern directly - a first contact scoring CSAT 4 and QA 92%, then three follow-ups scoring CSAT 2, 1, and 1 while QA still held at 85-88%. Micro Coaching card 1 (start where they left off) and card 2 (let the dispute set the tone) were deployed from week 2. Auto-fail QA outcomes have fallen from a week-1 peak of 16 to 11 by week 5, uneven rather than clean, while continuation-cohort CSAT has moved every week, 2.3 to 3.4.',
+      'Rate Class / Bill Impact Questions (18.0%) and Billing & Fee Dispute Escalations (16.0%) combine to 34.0% of weekly volume, and this is not a hypothesis - it is independently evidenced on Apex’s own public Google Business Profile (2.5 stars, 52 reviews): a customer billed CA$3,143 in fees against CA$488 of actual gas use, a vacant-property customer charged a daily distribution fee for zero usage, and recurring complaints describing phone agents as rude or unhelpful when these disputes come up. One customer’s dispute sequence shows the pattern directly - a first contact scoring CSAT 4 and QA 92%, then three follow-ups scoring CSAT 2, 1, and 1 while QA still held at 85-88%. Micro Coaching card 1 (start where they left off) and card 2 (let the dispute set the tone) were deployed from week 2. Auto-fail QA outcomes went 14 → 12 → 14 → 8 → 2, back to the week-1 level in week 3 before falling, while continuation-cohort CSAT has moved every week, 2.0 to 2.9.',
     trend: {
       title: 'Continuation-cohort CSAT · 5-week',
       weeks: WK_LABELS,
-      data: [2.3, 2.5, 2.8, 3.1, 3.4],
+      data: CONTINUATION_CSAT_RECOVERY.weekly,
       color: '#2a4fa8',
       coachingWeekIndex: 1,
     },
@@ -236,7 +242,7 @@ export const CROSS_KPI_PATTERNS = [
       rows: [
         { a: 'Combined driver', b: 'Rate Class / Bill Impact + Billing & Fee Dispute · 34.0% of weekly volume, 1,088 contacts' },
         { a: 'Coaching deployed', b: 'Week 2, cards 1 and 2 (open with the account, let the dispute set the tone) to all ten agents' },
-        { a: 'Auto-fail outcomes', b: '16 → 9 → 11 → 8 → 11 across the period, uneven, not a clean decline' },
+        { a: 'Auto-fail outcomes', b: '14 → 12 → 14 → 8 → 2 across the period, back to the week-1 level in week 3 before falling' },
       ],
     },
   },
@@ -336,18 +342,18 @@ export const HERO_CONTENT = {
   headline: 'The bill disputes were already a problem. The rate change just landed on top of them.',
   paragraphs: [
     'Billing and fee disputes, including the wave of Rate Class / Bill Impact Questions triggered by the August 1 Phase 2 rate restructuring, are 34% of Apex’s weekly contact volume combined, and independently evidenced on Apex’s own public Google reviews: a 2.5-star profile with recurring complaints about disproportionate fees and rude phone handling, not a hypothesis. Most of these contacts start as a first call that resolves cleanly - first-contact CSAT is 4.3. The pattern breaks on the callback: continuation CSAT for the same customers drops to 2.3, and repeat-contact rate for this cohort has climbed from 17.5% to 22.6% over five weeks.',
-    'Micro Coaching targeting clarity-of-communication and ownership on repeat contacts was applied from week 2; continuation CSAT begins recovering (2.3 to 3.4 by week 5). Two things this doesn’t fix: the rare but severe case of an account falling through the billing cracks entirely (one real customer went 8 months unbilled, then received an unexplained CA$1,800 back-bill), and the System Betterment construction-notification gap, a cross-team process issue between engineering scheduling and customer comms that behavioural coaching alone won’t close. One genuine bright spot worth keeping in the story: Apex’s field emergency-response team is already a strength, not a weakness - the same public reviews that complain about billing separately praise named technicians for fast, professional gas-leak response. The damage is concentrated in the phone/billing side of the house, not the field side.',
+    'Micro Coaching targeting clarity-of-communication and ownership on repeat contacts was applied from week 2; continuation CSAT begins recovering (2.0 in week 1 to 2.9 by week 5). Two things this doesn’t fix: the rare but severe case of an account falling through the billing cracks entirely (one real customer went 8 months unbilled, then received an unexplained CA$1,800 back-bill), and the System Betterment construction-notification gap, a cross-team process issue between engineering scheduling and customer comms that behavioural coaching alone won’t close. One genuine bright spot worth keeping in the story: Apex’s field emergency-response team is already a strength, not a weakness - the same public reviews that complain about billing separately praise named technicians for fast, professional gas-leak response. The damage is concentrated in the phone/billing side of the house, not the field side.',
   ],
   /**
    * The one-line "what actually moved" summary under the hero narrative.
    */
   wow:
-    'Continuation-cohort CSAT 2.3 → 3.4 since coaching · continuation QA held flat at 88.0% throughout · auto-fail contacts 16 → 9 → 11 → 8 → 11, down from the week-1 peak but not a clean line',
+    'Continuation-cohort CSAT 2.0 → 2.9 since coaching · continuation QA held flat at 88.0% throughout · auto-fail contacts 14 → 12 → 14 → 8 → 2, back up in week 3 before falling',
   /**
    * The "how to read these charts" note above the KPI grid.
    */
   readingNote:
-    'Micro Coaching deployed in week 2, marked on every chart below. Continuation-cohort CSAT responds directly to coaching and has climbed every week since. Auto-fail contacts fell from their week-1 peak but have not settled into a clean downward line, still 11 in week 5. The rest are blended, population-wide KPIs across all 3,200 weekly contacts; they are flat or still deteriorating, which is what four weeks of coaching on a specific agent cohort should look like at this stage. Judge the intervention on continuation CSAT now, and on auto-fails and repeat contact rate next quarter.',
+    'Micro Coaching deployed in week 2, marked on every chart below. Continuation-cohort CSAT responds directly to coaching and has climbed every week since. Auto-fail contacts climbed back to their week-1 level in week 3 before falling to 2 in week 5, so the decline is two weeks old. The rest are blended, population-wide KPIs across all 3,200 weekly contacts; blended CSAT only lifts in week 5 and the others are flat or still deteriorating, which is what four weeks of coaching on a specific agent cohort should look like at this stage. Judge the intervention on continuation CSAT now, and on auto-fails and repeat contact rate next quarter.',
 }
 
 /**
@@ -357,8 +363,8 @@ export const KPI_TILE_META = {
   csat: { label: 'CSAT', colour: 'amber' },
   criticalFailures: {
     label: 'Auto-fail contacts',
-    target: 'Peak: 16 in week 1',
-    changeText: 'W1 16 → W5 11. Down from the peak, not a clean decline',
+    target: 'Peak: 14 in weeks 1 and 3',
+    changeText: 'W1 14 → W5 2. Back to 14 in week 3 before falling',
     varianceDirection: 'down',
     colour: 'amber',
     drillLabel: 'View auto-fail contacts →',
@@ -372,7 +378,7 @@ export const KPI_TILE_META = {
   aht: { label: 'AHT', changeText: 'Voice + messaging blended', colour: 'green' },
   // Labelled "first contact" deliberately: this is the share of contacts
   // resolved on the FIRST attempt with no repeat. It is a different measure
-  // from Quality Overview's "Call Resolution Rate", which is the share of
+  // from Quality Diagnostics' "Call Resolution Rate", which is the share of
   // contacts resolved eventually. Both are correct and they do not agree by
   // design - see qualityConstants.METRIC_CARD_NOTES.
   fcr: {
@@ -395,7 +401,7 @@ export const METRIC_ROOT_CAUSE = {
     drivers: [
       { a: 'Rate Class / Bill Impact + Billing & Fee Dispute', b: 'Continuation contacts scoring 2.3 CSAT vs 4.3 on first contact' },
       { a: 'Missing Bill / Account Reconciliation', b: '31% of Billing & Fee Dispute contacts closed with no resolution path for the customer' },
-      { a: 'Micro Coaching', b: 'Continuation-cohort CSAT 2.3 → 3.4 since week 2 · auto-fails down from peak but still uneven' },
+      { a: 'Micro Coaching', b: 'Continuation-cohort CSAT 2.0 → 2.9 since week 2 · auto-fails 14 → 2, uneven through week 3' },
     ],
   },
   rcr: {

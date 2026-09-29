@@ -23,7 +23,7 @@ export const CAMPAIGN_SUMMARY_BY_WEEK = [
     paragraphs: [
       'Week 1 surfaces a large block of contacts in resolution achieved, process followed, and negative CSAT. Process adherence sits at {processAdherencePct}% and resolution at {resolutionRatePct}% across {total} contacts, yet customers are rating the experience poorly.',
       'These are follow-up contacts where the customer called back on an unresolved billing or rate-class dispute and the agent handled it as a fresh request. A contact can pass every scorecard question and still fail the customer.',
-      '{criticalFailures} contacts auto-failed this week, the peak of the period, concentrated on a small number of agents. The Poor behaviour, negative CSAT cell alone holds {heroCount} contacts ({heroPct}% of all contacts that week) with a mean QA of {meanQa}.',
+      '{criticalFailures} contacts auto-failed this week, the joint-highest week of the period (week 3 matches it), concentrated on a small number of agents. The Poor behaviour, negative CSAT cell alone holds {heroCount} contacts ({heroPct}% of all contacts that week) with a mean QA of {meanQa}.',
     ],
     wow: 'Auto-fails {criticalFailures} · process adherence {processAdherencePct}% · positive CSAT {positiveCsatPct}% · hero-cell mean QA {meanQa}',
     chips: [
@@ -51,7 +51,7 @@ export const CAMPAIGN_SUMMARY_BY_WEEK = [
     headline:
       'Auto-fails tick back up this week. Continuation CSAT keeps climbing regardless, and the negative-CSAT-despite-good-process cell is the one to watch.',
     paragraphs: [
-      'Auto-fail contacts rise to {criticalFailures} this week, up from week 2 but still below the week-1 peak. Continuation CSAT climbs anyway, which is a genuine early signal, not a contradiction: agents are opening more contacts by naming the dispute history even while the auto-fail count has not settled into a clean line yet.',
+      'Auto-fail contacts rise to {criticalFailures} this week, up from week 2 and back level with week 1. Continuation CSAT climbs anyway, which is a genuine early signal, not a contradiction: agents are opening more contacts by naming the dispute history even while the auto-fail count has not settled into a clean line yet.',
       'Across {total} contacts, process adherence is {processAdherencePct}% and resolution is {resolutionRatePct}%. Positive CSAT sits at {positiveCsatPct}%.',
       'Mean QA in the hero cell remains high at {meanQa}, which is the proof point: scorecards pass while the customer experience still fails until behaviour changes.',
     ],
@@ -64,7 +64,7 @@ export const CAMPAIGN_SUMMARY_BY_WEEK = [
   },
   {
     headline:
-      'Auto-fails fall to {criticalFailures}, the lowest point of the period. CSAT keeps recovering as Micro Coaching settles into habit.',
+      'Auto-fails fall to {criticalFailures}, the lowest point so far. CSAT keeps recovering as Micro Coaching settles into habit.',
     paragraphs: [
       'Process adherence ({processAdherencePct}%) and resolution ({resolutionRatePct}%) hold across {total} contacts. Positive CSAT is {positiveCsatPct}%.',
       'A contact can still pass every scorecard question and fail the customer when a cross-team dependency, not behaviour, is the blocker. The matrix is now separating those two problems.',
@@ -72,20 +72,20 @@ export const CAMPAIGN_SUMMARY_BY_WEEK = [
     ],
     wow: 'Auto-fails {criticalFailures} · process adherence {processAdherencePct}% · positive CSAT {positiveCsatPct}% · continuation recovery underway',
     chips: [
-      { text: 'Auto-fails at their lowest point, {criticalFailures}', className: 'chip-green', dotColor: '#4ade80' },
+      { text: 'Auto-fails at their lowest so far, {criticalFailures}', className: 'chip-green', dotColor: '#4ade80' },
       { text: 'Process gaps still drive residual negative CSAT', className: 'chip-amber', dotColor: '#fbbf24' },
       { text: 'Behaviour gap no longer the primary driver', className: 'chip-green', dotColor: '#4ade80' },
     ],
   },
   {
     headline:
-      'Auto-fails close the period at {criticalFailures}, down from the week-1 peak but not a clean line. Continuation CSAT is the clearer win so far, and System Betterment notification timing remains an open, uncoached gap.',
+      'Auto-fails close the period at {criticalFailures}, the lowest week, after climbing back to the week-1 level in week 3. Continuation CSAT is the clearer win so far, and System Betterment notification timing remains an open, uncoached gap.',
     paragraphs: [
-      'Week 5 closes the period with {criticalFailures} auto-fail contacts, down from the week-1 peak of 16 but not a smooth decline. Continuation-cohort CSAT is the cleaner result, up every week since coaching started. Remaining negative CSAT sits partly in System Betterment / Construction Project Notifications, a cross-team process gap, not a behavioural one.',
+      'Week 5 closes the period with {criticalFailures} auto-fail contacts, down from 14 in weeks 1 and 3, so the decline is two weeks old. Continuation-cohort CSAT is the cleaner result, up every week since coaching started. Remaining negative CSAT sits partly in System Betterment / Construction Project Notifications, a cross-team process gap, not a behavioural one.',
       'That is a different problem needing a process fix, not more coaching. Process adherence is {processAdherencePct}%, resolution {resolutionRatePct}%, and positive CSAT {positiveCsatPct}% across {total} contacts.',
       'Quality mining found the dispute-history gap in week 1, Micro Coaching from week 2 moved continuation CSAT up every week, and auto-fail volume stayed uneven - the two indicators the executive summary reports side by side rather than folding into one clean story. This demo uses illustrative, synthetic data.',
     ],
-    wow: 'Auto-fails uneven across the period · process adherence {processAdherencePct}% · positive CSAT {positiveCsatPct}% · process-gap residual remains open',
+    wow: 'Auto-fails 14 → 2, uneven through week 3 · process adherence {processAdherencePct}% · positive CSAT {positiveCsatPct}% · process-gap residual remains open',
     chips: [
       { text: 'Continuation CSAT up every week since coaching', className: 'chip-green', dotColor: '#4ade80' },
       { text: 'Residual negative CSAT includes a process gap, not just behaviour', className: 'chip-amber', dotColor: '#fbbf24' },
@@ -207,7 +207,7 @@ export const FRUSTRATION_KEYWORDS = [
 ]
 
 /**
- * One-line definitions under the Quality Overview metric cards.
+ * One-line definitions under the Quality Diagnostics metric cards.
  *
  * "Call Resolution Rate" here is the share of contacts resolved *eventually*.
  * Executive's "First contact resolution" KPI is the share resolved on the

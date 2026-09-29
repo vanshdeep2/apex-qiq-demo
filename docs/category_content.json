@@ -1,0 +1,864 @@
+{
+  "Billing and fee disputes escalate on top of an already-strained rate-change season": {
+    "side": "demand",
+    "opening": [
+      "My bill is almost all fees and hardly any gas, and I want someone to explain it.",
+      "I've been disputing these fees for weeks and nobody has fixed them yet."
+    ],
+    "detail": [
+      "I have used under CA$500 of actual gas and been charged thousands in fees — that math doesn't add up.",
+      "Every time I call about this I get a different answer and nobody sounds like they want to help."
+    ],
+    "action": "pulled the full fee breakdown against metered usage and reviewed the prior contact history on this dispute",
+    "good": "I've gone through every fee line against your actual usage, found the ones charged in error, and I'm applying a corrected credit to this statement — I've also flagged this account so the credit is visible before your next bill goes out.",
+    "bad": "I've confirmed the fee structure is billed correctly under the current rate schedule regardless of usage, and I don't have authority to waive charges that are applied correctly — I can escalate this to a billing specialist for further review.",
+    "topic": "fee dispute",
+    "verify": [
+      "Can you give me the account number from your bill, or the service address and the name on the account?",
+      "Before I go into the account, can you confirm the service address and the account holder's name?"
+    ],
+    "verify_reply": [
+      "Sure, it's the house on the account, and the bill's in my name.",
+      "Yes, same address as always, and the account's under my name."
+    ],
+    "ack": [
+      "Thanks for bearing with us on this. Let me go through the bill with you properly.",
+      "Understood. Let me pull up the account and look at the charges before I say anything."
+    ],
+    "probes": [
+      [
+        "Which bill are you looking at, this month's or the one before?",
+        "This month's, but the last three have looked the same."
+      ],
+      [
+        "Did anyone on an earlier call say they'd review the fees?",
+        "Yes, I was told someone would call me back. Nobody did."
+      ],
+      [
+        "Is the property lived in year-round?",
+        "Yes, but we're careful with the gas. The usage line is small, the fee lines aren't."
+      ],
+      [
+        "Do you have a figure in mind for what you think is wrong?",
+        "I worked it out. Over two years it's a few hundred dollars of gas against thousands in charges."
+      ]
+    ],
+    "explain": [
+      "The fixed daily charge and the distribution charge are set by the AUC for your rate class, so they apply even when usage is low.",
+      "I can also see the earlier dispute notes on the account, so I'm not starting from scratch."
+    ],
+    "good_after": [
+      [
+        "So which part was actually wrong?",
+        "One administration fee was applied twice in July. That's the credit you'll see."
+      ],
+      [
+        "And the rest of the fees?",
+        "They're the regulated distribution and fixed charges. I've emailed you a one-page breakdown of each line."
+      ]
+    ],
+    "bad_after": [
+      [
+        "So I just keep paying fees on gas I don't use?",
+        "The regulated charges stay, yes. What I can do is have a billing specialist check every line, not just explain them again."
+      ],
+      [
+        "When will I actually hear back?",
+        "The specialist review is booked, and you'll get a call within five business days with the outcome."
+      ]
+    ],
+    "recap_good": "To recap: the duplicate fee is credited on this statement, the breakdown is in your email, and the account is flagged so the credit shows before your next bill.",
+    "recap_bad": "To recap: the regulated charges stand, a billing specialist is reviewing every line, and you'll get a call within five business days."
+  },
+  "An account falls through the billing cracks, then lands a CA$1,800 surprise": {
+    "side": "demand",
+    "opening": [
+      "I didn't get a bill for eight months, and now you've cut off my gas over it.",
+      "I've just been hit with a CA$1,800 bill after hearing nothing from you for most of a year."
+    ],
+    "detail": [
+      "How does a bill just not go out for eight months without anyone catching it on your end?",
+      "I don't understand how you can even take a meter reading on an account you told me didn't exist."
+    ],
+    "action": "pulled the full account history, confirmed the eight-month billing gap against metered usage, and reviewed how the reconnection was handled",
+    "good": "I can see the gap on our side going back eight months, I've confirmed it against your actual metered usage, and I'm setting up a payment plan to spread the balance over several months while I file the internal correction — this shouldn't have happened and I'm making sure it's documented.",
+    "bad": "I've confirmed the balance is accurate against metered usage over the unbilled period, but I don't have authority to waive it — what I can offer is a payment plan so the CA$1,800 isn't due all at once.",
+    "topic": "missed-billing back-bill",
+    "verify": [
+      "Can you give me the service address and the name you expected the account to be under?",
+      "Can you confirm the service address and roughly when you moved in?"
+    ],
+    "verify_reply": [
+      "It's the house we're renting in Leduc. We moved in last winter.",
+      "The rental in Leduc, and I assumed gas was in the city utility bill."
+    ],
+    "ack": [
+      "That's a lot to land on you at once. Let me go through the account history properly.",
+      "I'm sorry you found out this way. Let me see what happened on our side."
+    ],
+    "probes": [
+      [
+        "Did you receive any letters from us while you lived there?",
+        "Nothing. Not one bill, not one notice."
+      ],
+      [
+        "Were you paying a utility bill to anyone else in that time?",
+        "The City of Leduc utility bill. I thought gas was part of it."
+      ],
+      [
+        "Has the service been reconnected yet?",
+        "It came back on after I called, but only after I'd been told I had no account."
+      ],
+      [
+        "Would a payment plan help, if the balance holds up?",
+        "Maybe, but first I want to know how you worked out the number."
+      ]
+    ],
+    "explain": [
+      "The meter kept recording usage the whole time, but the account wasn't set up in your name, so no bill was generated.",
+      "The CA$1,800 is the metered usage for those eight months plus the regulated charges for the same period."
+    ],
+    "good_after": [
+      [
+        "How much would the payments be each month?",
+        "Spread over twelve months it's about CA$150 a month on top of your regular bill, with no interest."
+      ],
+      [
+        "And the missed bills were your mistake, not mine?",
+        "The account set-up gap was on our side, and I've recorded it that way on the file."
+      ]
+    ],
+    "bad_after": [
+      [
+        "So I still owe all of it?",
+        "The balance matches the metered usage, so yes. It doesn't have to be paid at once, though."
+      ],
+      [
+        "Who looks at how this happened?",
+        "I've sent it to the billing team as an account set-up error so it's reviewed, and I'll call you with what they find."
+      ]
+    ],
+    "recap_good": "To recap: the balance is on a twelve-month plan, the set-up error is recorded against us, and you'll get your first regular bill next cycle.",
+    "recap_bad": "To recap: the balance stands, a payment plan is available whenever you want it, and the billing team is reviewing how the account was missed."
+  },
+  "Rate Class / Bill Impact Questions (Phase 2 Change)": {
+    "side": "demand",
+    "opening": [
+      "My bill jumped and I don't understand why. Did something change with my rate?",
+      "I got a letter about a 'Rate 1' and 'Rate 2' change and I have no idea what it means for my bill.",
+      "Someone told me I'm being moved to a different rate class because of the August rate change. Is that true?"
+    ],
+    "detail": [
+      "I've been on the same rate for years, why is this changing now?",
+      "Is this the Phase 2 thing the AUC approved, or did I do something wrong on my account?"
+    ],
+    "action": "pulled up the account, confirmed the Rate 1/Rate 2 threshold under the August 1 Phase 2 restructuring, and walked through what changed on this specific account",
+    "good": "You're on Rate 1 since your annual usage is under 4,000 GJ, so the main change is the way the distribution charge is broken out on the bill — your total shouldn't move much. I've sent the AUC decision summary to your email so you have it on file.",
+    "bad": "Your usage puts you right at the edge of the new Rate 2 threshold, so this bill reflects the higher rate class — I don't have authority to move you back to Rate 1 manually, that's set by your metered usage under the AUC-approved structure.",
+    "topic": "rate-class change",
+    "verify": [
+      "Can you give me the account number from your bill, or the service address and the name on the account?",
+      "Before I go into the account, can you confirm the service address and the account holder's name?"
+    ],
+    "verify_reply": [
+      "Sure, it's the house on the account, and the bill's in my name.",
+      "Yes, same address as always, and the account's under my name."
+    ],
+    "ack": [
+      "Good question, a lot of customers are asking about this one. Let me check your account.",
+      "Happy to explain it. Let me pull up your usage first."
+    ],
+    "probes": [
+      [
+        "Is this a home, a farm, or a business account?",
+        "It's our home. We're not a business."
+      ],
+      [
+        "Roughly how much gas do you use in a year, or should I look it up?",
+        "No idea. Can you look it up?"
+      ],
+      [
+        "Did you get the letter by mail or by email?",
+        "By mail, a couple of weeks ago."
+      ],
+      [
+        "Do you have any irrigation or shop meters on the same account?",
+        "No, just the house."
+      ]
+    ],
+    "explain": [
+      "Since August 1, Rate 1 covers accounts using under 4,000 GJ a year and Rate 2 covers larger users. The AUC approved it as Phase 2 of the rate restructuring.",
+      "Your annual usage is well under that, so you stay on Rate 1. What changed is how the distribution charge is shown on the bill."
+    ],
+    "good_after": [
+      [
+        "So my total won't go up much?",
+        "It shouldn't. Most of this month's jump is colder weather, not the rate change."
+      ],
+      [
+        "Can I get that in writing?",
+        "The AUC summary and your usage figure are in your email now."
+      ]
+    ],
+    "bad_after": [
+      [
+        "Can't you just put me back on Rate 1?",
+        "Not manually. The class follows your metered usage under the approved structure."
+      ],
+      [
+        "What happens if my usage drops next year?",
+        "The class is reviewed against your annual usage, so it would move back if you fall under the threshold. I've noted that on the account."
+      ]
+    ],
+    "recap_good": "To recap: you're staying on Rate 1, the change is mostly how the bill is laid out, and the summary is in your email.",
+    "recap_bad": "To recap: your usage puts you in Rate 2 for now, the class is reviewed against annual usage, and the details are in your email."
+  },
+  "Billing & Fee Dispute Escalations": {
+    "side": "demand",
+    "opening": [
+      "I need to dispute this bill. The fees on it don't make sense.",
+      "You charged me far more in fees than the gas actually cost. That can't be right.",
+      "I'm looking at a distribution charge on a property that used zero gas this month."
+    ],
+    "detail": [
+      "Can you actually break down where every line item on this bill comes from?",
+      "This isn't the first time — I feel like I'm being charged fees just for having an account."
+    ],
+    "action": "reviewed the itemized charges line by line against metered usage and the current distribution rate schedule",
+    "good": "I've gone through every line — the distribution charge and fixed monthly charge apply regardless of usage under your rate class, and I've corrected the one line item that was billed in error. You'll see the adjustment on your next statement.",
+    "bad": "The distribution and fixed charges you're seeing are billed under the AUC-approved rate schedule regardless of how much gas you actually use that month — I can explain the structure, but I don't have the authority to waive a regulated charge.",
+    "topic": "fee dispute",
+    "verify": [
+      "Can you give me the account number from your bill, or the service address and the name on the account?",
+      "Before I go into the account, can you confirm the service address and the account holder's name?"
+    ],
+    "verify_reply": [
+      "Sure, it's the house on the account, and the bill's in my name.",
+      "Yes, same address as always, and the account's under my name."
+    ],
+    "ack": [
+      "Thanks for bearing with us on this. Let me go through the bill with you properly.",
+      "Understood. Let me pull up the account and look at the charges before I say anything."
+    ],
+    "probes": [
+      [
+        "Which line items are you disputing?",
+        "The distribution charge and the fixed charge. They're bigger than the gas."
+      ],
+      [
+        "Is the property occupied at the moment?",
+        "It's vacant while we sell it, so the gas is barely on."
+      ],
+      [
+        "Have you raised this with us before?",
+        "Once before, and I was told it's just how the bill works."
+      ],
+      [
+        "Would a line-by-line breakdown by email help?",
+        "Yes, I want to see where every dollar comes from."
+      ]
+    ],
+    "explain": [
+      "The distribution charge and the fixed daily charge are set by the AUC for your rate class, so they apply even when the meter reads zero.",
+      "I've checked each line against your metered usage and the current rate schedule."
+    ],
+    "good_after": [
+      [
+        "So one of them was actually wrong?",
+        "Yes, a late-payment charge was applied after your payment had already cleared. That's the adjustment."
+      ],
+      [
+        "And the zero-usage charges?",
+        "Those are regulated and stay. The breakdown in your email explains each one."
+      ]
+    ],
+    "bad_after": [
+      [
+        "So there's nothing you can do?",
+        "I can't waive a regulated charge. I can send the dispute to a billing specialist so every line is checked, not just explained."
+      ],
+      [
+        "How long will that take?",
+        "You'll get a call with the outcome within five business days."
+      ]
+    ],
+    "recap_good": "To recap: the late-payment charge comes off on your next statement, and the line-by-line breakdown is in your email.",
+    "recap_bad": "To recap: the regulated charges stand, a billing specialist is checking each line, and you'll hear back within five business days."
+  },
+  "Budget Billing (Equalization Plan) Enrollment & Adjustments": {
+    "side": "demand",
+    "opening": [
+      "Why did my equalized payment change again? Nobody told me this was happening.",
+      "I signed up for budget billing so my payments would be predictable, and now I've got a CA$600 catch-up bill.",
+      "Can you explain how the equalization plan works out my monthly amount?"
+    ],
+    "detail": [
+      "This is the third time this year my equalized amount has changed on me.",
+      "If the point of this plan is predictable payments, why does it keep moving?"
+    ],
+    "action": "reviewed the equalization plan's 12-month usage average and the reconciliation adjustment that triggered the change",
+    "good": "The plan recalculates twice a year against your rolling usage average, and this adjustment reflects higher usage than last year's estimate — I've set up an email alert so you'll get advance notice before the next recalculation instead of finding out on the bill.",
+    "bad": "The equalization amount is recalculated from your usage history under the plan terms, and I can't reverse an adjustment that's already been applied — what I can do is flag your file so the next change comes with a heads-up call before it hits your bill.",
+    "topic": "budget billing adjustment",
+    "verify": [
+      "Can you give me the account number from your bill, or the service address and the name on the account?",
+      "Before I go into the account, can you confirm the service address and the account holder's name?"
+    ],
+    "verify_reply": [
+      "Sure, it's the house on the account, and the bill's in my name.",
+      "Yes, same address as always, and the account's under my name."
+    ],
+    "ack": [
+      "Thanks for bearing with us on this. Let me go through the bill with you properly.",
+      "Understood. Let me pull up the account and look at the charges before I say anything."
+    ],
+    "probes": [
+      [
+        "When did you first join the equalization plan?",
+        "About two years ago, when we moved in."
+      ],
+      [
+        "Did you get a notice before the amount changed?",
+        "No. I found out when the payment came out."
+      ],
+      [
+        "Has anything changed at home, like a new appliance or more people?",
+        "We had a baby, so the heat's been on more."
+      ],
+      [
+        "Would you rather stay on the plan or go back to regular billing?",
+        "Stay on it, if it stops jumping around."
+      ]
+    ],
+    "explain": [
+      "The plan averages your last twelve months of usage and is reviewed at month six. If usage runs higher than the estimate, the difference is added.",
+      "Your usage this year is running above last year's, which is why the amount went up."
+    ],
+    "good_after": [
+      [
+        "Will it change again without warning?",
+        "The next review is in six months, and you'll get an email two weeks before it."
+      ],
+      [
+        "And the catch-up amount?",
+        "I've spread it over your remaining months so there's no lump sum."
+      ]
+    ],
+    "bad_after": [
+      [
+        "So the CA$600 is still due?",
+        "The adjustment has been applied and I can't reverse it. I can split it over two payments instead of one."
+      ],
+      [
+        "And next time?",
+        "I've flagged your file so the next change comes with a call before it reaches your bill."
+      ]
+    ],
+    "recap_good": "To recap: the catch-up is spread over the rest of the plan year, and you'll get an email two weeks before the next review.",
+    "recap_bad": "To recap: the adjustment stands, it can be split over two payments, and your file is flagged for a call before the next change."
+  },
+  "Start / Stop / Move / Payment / Account Access": {
+    "side": "demand",
+    "opening": [
+      "I'm moving next week and need gas stopped at my old place and started at the new one.",
+      "We've bought a house in Leduc County and need the gas account moved over from our rental.",
+      "I need to close my account at the old address and set up payments for the new one."
+    ],
+    "detail": [
+      "What's the actual turnaround time between the stop and the start?",
+      "Do I need to be home for anyone to come out, or can this be done remotely?"
+    ],
+    "action": "processed the account request and confirmed the effective date against the service address change",
+    "good": "I've got the stop set for your move-out date and the start scheduled for your new address the same day, no technician visit needed for a standard meter transfer, and I've sent both confirmations to your email.",
+    "bad": "I've submitted the request, but a technician visit is required to activate the new address's meter and the earliest slot is a few days out — I've flagged it as a move-in priority, but I can't guarantee same-day activation.",
+    "topic": "account request",
+    "verify": [
+      "Can you give me the account number from your bill, or the service address and the name on the account?",
+      "Before I go into the account, can you confirm the service address and the account holder's name?"
+    ],
+    "verify_reply": [
+      "Sure, it's the house on the account, and the bill's in my name.",
+      "Yes, same address as always, and the account's under my name."
+    ],
+    "ack": [
+      "No problem, I can help with that.",
+      "Sure. Let me get the account up."
+    ],
+    "probes": [
+      [
+        "What date do you need the stop to take effect?",
+        "The last day of the month. That's when we hand the keys back."
+      ],
+      [
+        "Is the new address in one of our service areas?",
+        "Yes, it's still in Leduc County."
+      ],
+      [
+        "Is the email on your account still current, for the confirmations?",
+        "It's an old one. Can you change it to my new email?"
+      ],
+      [
+        "Would you like pre-authorized payments set up at the new address?",
+        "Yes, same bank as now."
+      ]
+    ],
+    "explain": [
+      "A stop and start on the same day is routine. We read the old meter on the move-out date so you only pay to that day.",
+      "I've updated the email on file, so the confirmations and your final bill go to the right place."
+    ],
+    "good_after": [
+      [
+        "And the final bill for the old place?",
+        "It comes within two weeks of the move-out read."
+      ],
+      [
+        "Will the new account use the same payment details?",
+        "Yes, the pre-authorized payment moves over with you."
+      ]
+    ],
+    "bad_after": [
+      [
+        "So I might be without gas when I move in?",
+        "Possibly for a day or two. The new meter needs a technician to turn it on, and the earliest slot is a few days out."
+      ],
+      [
+        "Can you move it up?",
+        "I've marked it as a move-in priority, and if a slot opens you'll get a call."
+      ]
+    ],
+    "recap_good": "To recap: stop on the move-out date, start the same day at the new address, confirmations in your email.",
+    "recap_bad": "To recap: the stop is booked, the new meter needs a technician visit, and you're on the priority list for an earlier slot."
+  },
+  "Estimated vs. Actual Meter Read Disputes": {
+    "side": "demand",
+    "opening": [
+      "This bill says 'estimated read' again. Can someone come and read my meter?",
+      "My estimated bill was way higher than what I actually used last month.",
+      "How many months in a row can you estimate my usage before someone comes out?"
+    ],
+    "detail": [
+      "Is there a way I can submit my own meter reading instead of waiting?",
+      "If the estimate is wrong, how does the correction actually happen on a future bill?"
+    ],
+    "action": "checked the meter-read schedule for the account and confirmed whether a self-read or field read was available",
+    "good": "I've scheduled an actual field read for your next cycle and shown you how to submit a self-read online in the meantime, so this month's estimate will be corrected against the real number once it's read.",
+    "bad": "Your meter is on the standard bi-monthly read cycle, so this cycle is estimated by design — I've noted your account for a field read next cycle, but I can't move today's estimate to an actual reading.",
+    "topic": "estimated meter read",
+    "verify": [
+      "Can you give me the account number from your bill, or the service address and the name on the account?",
+      "Before I go into the account, can you confirm the service address and the account holder's name?"
+    ],
+    "verify_reply": [
+      "Sure, it's the house on the account, and the bill's in my name.",
+      "Yes, same address as always, and the account's under my name."
+    ],
+    "ack": [
+      "Thanks for bearing with us on this. Let me go through the bill with you properly.",
+      "Understood. Let me pull up the account and look at the charges before I say anything."
+    ],
+    "probes": [
+      [
+        "Can you see the meter from outside, or is it behind a gate?",
+        "It's behind the back gate, and the dog's out there during the day."
+      ],
+      [
+        "Do you have a reading from the meter today?",
+        "I took a photo this morning. It's much lower than the bill."
+      ],
+      [
+        "How many estimated bills have you had in a row?",
+        "Three, I think."
+      ],
+      [
+        "Would a self-read reminder by email work for you?",
+        "Yes, if it actually gets used."
+      ]
+    ],
+    "explain": [
+      "When our reader can't reach the meter, the bill is estimated from your past usage for the same months.",
+      "Your reading this morning is lower than the estimate, so the next bill will correct the difference."
+    ],
+    "good_after": [
+      [
+        "So I'll get the overcharge back?",
+        "It's credited automatically on the next bill once the actual read is in."
+      ],
+      [
+        "And the gate?",
+        "I've added an access note so the reader calls ahead."
+      ]
+    ],
+    "bad_after": [
+      [
+        "So this month's estimate just stands?",
+        "For this cycle, yes. It corrects itself once there's an actual read."
+      ],
+      [
+        "When is the next actual read?",
+        "Next cycle. I've booked a field read and added an access note for the gate."
+      ]
+    ],
+    "recap_good": "To recap: your self-read is on file, the next bill corrects the estimate, and the reader will call ahead about the gate.",
+    "recap_bad": "To recap: this estimate stands for now, a field read is booked for next cycle, and any difference is corrected on that bill."
+  },
+  "System Betterment / Construction Project Notifications": {
+    "side": "demand",
+    "opening": [
+      "There's a crew digging up the street outside my house and I never got any notice about it.",
+      "Is the construction on my street part of the pipe replacement program, and how long will it last?",
+      "The pipe replacement crew is on my street, and nobody told me how long it will take."
+    ],
+    "detail": [
+      "Is my gas service going to be interrupted at any point during this work?",
+      "Who do I actually call if the crew damages something on my property?"
+    ],
+    "action": "looked up the System Betterment Program schedule for that street segment and confirmed the notification timeline that was sent",
+    "good": "This is the pre-1975 pipe replacement work under our System Betterment Program — a notice with the timeline and a site contact number should have gone out two weeks ahead, I've resent it to your address and confirmed there's no planned service interruption.",
+    "bad": "The work is confirmed as part of the System Betterment Program, but the notification that should have gone out ahead of the crew arriving didn't reach your address — I've logged that gap for the notifications team, though I can't change the schedule already in progress.",
+    "topic": "construction notice",
+    "verify": [
+      "Can you give me the street address so I can match it to the project schedule?",
+      "Which street and block is the crew working on?"
+    ],
+    "verify_reply": [
+      "It's our house, right where they've got the fencing up.",
+      "Our block, the crew's been there since Monday."
+    ],
+    "ack": [
+      "Thanks for letting us know. Let me check the project schedule for your street.",
+      "I understand. Let me find the work order for your area."
+    ],
+    "probes": [
+      [
+        "Has anyone from the crew spoken to you yet?",
+        "No, they just started digging."
+      ],
+      [
+        "Do you need driveway access during the day?",
+        "Yes, I leave for work at seven."
+      ],
+      [
+        "Did you see a door hanger or letter in the last few weeks?",
+        "Nothing that I noticed."
+      ],
+      [
+        "Is anyone at home who relies on the gas during the day?",
+        "My mother's home most days, and she needs the heat on."
+      ]
+    ],
+    "explain": [
+      "This is the System Betterment Program, replacing older steel pipe on your street. A notice with the timeline and a site contact should have gone out two weeks ahead.",
+      "The work order shows a short planned interruption only when your service line is tied in, and you get a door knock first."
+    ],
+    "good_after": [
+      [
+        "How long will the street be dug up?",
+        "About two weeks on your block, with the road restored after."
+      ],
+      [
+        "Who do I call if something gets damaged?",
+        "The site contact on the notice. I've resent it to your address and email."
+      ]
+    ],
+    "bad_after": [
+      [
+        "So the notice just never came?",
+        "It didn't reach your address, and I've logged that for the notifications team."
+      ],
+      [
+        "Can they at least stop the crew from blocking my driveway?",
+        "I can't change the schedule, but I've asked the site supervisor to call you about access."
+      ]
+    ],
+    "recap_good": "To recap: two weeks on your block, a door knock before any interruption, and the notice with the site contact is in your email.",
+    "recap_bad": "To recap: the missed notice is logged, the site supervisor will call you about access, and the schedule itself stays as planned."
+  },
+  "General Gas Safety & Appliance Questions (Non-Emergency)": {
+    "side": "demand",
+    "opening": [
+      "Our furnace clicks a few times before it lights. Is that normal?",
+      "The furnace makes a soft whoosh when it comes on. Should I be worried?",
+      "Our furnace takes a few seconds to light after the fan starts. Is that a problem?"
+    ],
+    "detail": [
+      "Should I have someone look at it, or is it fine to keep using?",
+      "Is this something I should be worried about, or is it normal?"
+    ],
+    "action": "walked through the standard non-emergency safety guidance and checked for any signs that needed a field visit",
+    "good": "What you're describing is the normal ignition sequence, so there's nothing to worry about. If the sound changes, or you ever smell gas, call us straight away.",
+    "bad": "I can walk you through general guidance, but I can't diagnose the appliance itself over the phone — I'd recommend having your contractor or a licensed technician take a look before you use it again.",
+    "topic": "gas safety question",
+    "verify": [
+      "Can you give me the account number from your bill, or the service address and the name on the account?",
+      "Before I go into the account, can you confirm the service address and the account holder's name?"
+    ],
+    "verify_reply": [
+      "Sure, it's the house on the account, and the bill's in my name.",
+      "Yes, same address as always, and the account's under my name."
+    ],
+    "ack": [
+      "Good question. Let me walk you through it.",
+      "Happy to help with that."
+    ],
+    "probes": [
+      [
+        "Do you smell gas at all right now?",
+        "No, nothing like that."
+      ],
+      [
+        "How old is the furnace?",
+        "About fifteen years."
+      ],
+      [
+        "When was it last serviced by a licensed technician?",
+        "A couple of years ago, I think."
+      ],
+      [
+        "Is the house heating normally apart from that?",
+        "Yes, it heats fine."
+      ]
+    ],
+    "explain": [
+      "A few clicks or a soft whoosh before the burner lights is the igniter and the gas catching. That's normal on most furnaces.",
+      "Apex looks after the meter and the line to your house. The furnace itself is serviced by a licensed heating contractor."
+    ],
+    "good_after": [
+      [
+        "So I don't need anything from Apex?",
+        "Not for this. A yearly service by a licensed technician is still a good idea at fifteen years."
+      ],
+      [
+        "And if I ever do smell gas?",
+        "Leave the house and call our 24-hour emergency line from outside."
+      ]
+    ],
+    "bad_after": [
+      [
+        "Can you tell me if it's safe to use?",
+        "I can't diagnose the appliance itself over the phone."
+      ],
+      [
+        "So what should I do?",
+        "Have a licensed technician check it before you use it again, and if you ever smell gas, leave and call the emergency line."
+      ]
+    ],
+    "recap_good": "To recap: the ignition sound is normal, a yearly service is worth booking, and the emergency line is there if you ever smell gas.",
+    "recap_bad": "To recap: have a licensed technician check it before using it, and call the emergency line from outside if you smell gas."
+  },
+  "Gas Emergency / No-Heat / Leak Response": {
+    "side": "demand",
+    "opening": [
+      "I smell gas in my basement and I don't know what to do.",
+      "There's a hissing sound near my meter outside and a strong gas smell.",
+      "There's a gas smell in the kitchen and it's getting stronger."
+    ],
+    "detail": [
+      "Is it safe for me to stay in the house right now?",
+      "How long until someone actually gets here?"
+    ],
+    "action": "dispatched an emergency field technician immediately and stayed on the line with safety instructions",
+    "good": "A technician is on the way and should be there within 30 minutes — in the meantime, don't use any switches or open flames, and I'll call you back the moment they're on site.",
+    "bad": "A technician has been dispatched, but the nearest available crew is further out than usual today — please leave the property and wait somewhere safe until they arrive, and I'll stay on the line as long as you need.",
+    "topic": "gas emergency",
+    "verify": [
+      "Are you and everyone else out of the house now? What's the address?",
+      "First, is everyone outside and away from the house? Then give me the address."
+    ],
+    "verify_reply": [
+      "We're outside now, on the front lawn. It's the house on the corner.",
+      "Yes, we're all out. The address is on the account."
+    ],
+    "ack": [
+      "You did the right thing calling. Let's get you safe first.",
+      "Okay. Stay calm, we're dealing with this now."
+    ],
+    "probes": [
+      [
+        "Did you switch anything on or off before you left?",
+        "No, we just walked out."
+      ],
+      [
+        "Can you still smell it from where you're standing?",
+        "A little, near the side of the house."
+      ],
+      [
+        "Is anyone in the house who couldn't get out?",
+        "No, everyone's out, the dog too."
+      ],
+      [
+        "Is there a phone number the technician can reach you on?",
+        "This one. I'll keep it on me."
+      ]
+    ],
+    "explain": [
+      "A technician is being sent now. Gas odour calls go straight to the front of the queue.",
+      "Don't use light switches, phones or anything with a flame near the house until they've checked it."
+    ],
+    "good_after": [
+      [
+        "What will they do when they get here?",
+        "Check the house and meter for leaks and make it safe. They won't leave until it is."
+      ],
+      [
+        "Should we call the fire department?",
+        "If the smell gets stronger or you hear a loud hiss, yes, call 911 as well."
+      ]
+    ],
+    "bad_after": [
+      [
+        "Why is it taking longer today?",
+        "The nearest crew is on another call further out. You're next in their queue."
+      ],
+      [
+        "Can we wait in the car?",
+        "Wait away from the house, not in the driveway. I'll stay on the line until they arrive."
+      ]
+    ],
+    "recap_good": "To recap: the technician is on the way, stay outside, and don't use switches or flames until they've checked it.",
+    "recap_bad": "To recap: a crew is coming from further out, stay away from the house, and call 911 if the smell gets stronger."
+  },
+  "Missing Bill / Account Reconciliation Issues": {
+    "side": "demand",
+    "opening": [
+      "I haven't had a bill from you in months, and now my service has been cut off.",
+      "I just got a bill for CA$1,800 out of nowhere and I don't understand how that happened.",
+      "My account shows charges going back almost a year that I was never billed for."
+    ],
+    "detail": [
+      "How does a bill just not get sent for that long without anyone catching it?",
+      "Can I actually pay this all at once, or is there a plan to spread it out?"
+    ],
+    "action": "pulled the full billing history, confirmed the gap in statements, and reconciled it against actual metered usage",
+    "good": "I can see the billing gap on our side, confirmed against your actual metered usage, and I've set up a payment plan to spread this over several months at no extra cost while I file the internal correction for the missed billing cycle.",
+    "bad": "I've confirmed the reconciliation is accurate against metered usage, but I don't have the authority to waive the balance — what I can do is set up a payment plan so this isn't due all at once.",
+    "topic": "missed-billing reconciliation",
+    "verify": [
+      "Can you give me the account number from your bill, or the service address and the name on the account?",
+      "Before I go into the account, can you confirm the service address and the account holder's name?"
+    ],
+    "verify_reply": [
+      "Sure, it's the house on the account, and the bill's in my name.",
+      "Yes, same address as always, and the account's under my name."
+    ],
+    "ack": [
+      "I'm sorry, that's a lot to deal with. Let me go through the history properly.",
+      "Let me look at exactly what happened on the account before I say anything."
+    ],
+    "probes": [
+      [
+        "When did you move into the property?",
+        "Last winter. We're renting."
+      ],
+      [
+        "Did you get any letters from us in that time?",
+        "Nothing at all."
+      ],
+      [
+        "Who were you paying utilities to?",
+        "The city. I assumed gas was included."
+      ],
+      [
+        "Would a payment plan help, if the balance is right?",
+        "Maybe. I can't pay it all at once."
+      ]
+    ],
+    "explain": [
+      "The meter recorded usage the whole time, but the account wasn't set up, so no bills went out.",
+      "The balance is that metered usage plus the regulated charges for the same months."
+    ],
+    "good_after": [
+      [
+        "How much a month would that be?",
+        "Spread over twelve months, about CA$150 on top of your regular bill, with no interest."
+      ],
+      [
+        "And the missed bills?",
+        "That's recorded as a set-up error on our side, not a missed payment by you."
+      ]
+    ],
+    "bad_after": [
+      [
+        "So I owe all of it?",
+        "The balance is accurate to your usage, so yes, but it doesn't have to be paid at once."
+      ],
+      [
+        "Who checks how this happened?",
+        "I've sent it to the billing team as an account set-up error, and I'll call you with what they find."
+      ]
+    ],
+    "recap_good": "To recap: the balance is on a twelve-month plan, the set-up error is recorded against us, and regular bills start next cycle.",
+    "recap_bad": "To recap: the balance stands, a payment plan is ready whenever you want it, and the billing team is reviewing how the account was missed."
+  },
+  "Other / Miscellaneous": {
+    "side": "demand",
+    "opening": [
+      "I have a general question about my account that doesn't really fit anywhere else.",
+      "Can you confirm a few details on my account for me?",
+      "I'd like to update my contact details and check my account is in order."
+    ],
+    "detail": [
+      "I just want to make sure everything on file is correct.",
+      "Is there someone else I should be talking to about this instead?"
+    ],
+    "action": "reviewed the account and addressed the question directly, routing to a specialist team where needed",
+    "good": "Everything on the account checks out, and I've made the update you asked for — you're all set.",
+    "bad": "I've noted the request, but this needs a specialist team to action — I've routed it over and you should hear back within a few business days.",
+    "topic": "general account question",
+    "verify": [
+      "Can you give me the account number from your bill, or the service address and the name on the account?",
+      "Before I go into the account, can you confirm the service address and the account holder's name?"
+    ],
+    "verify_reply": [
+      "Sure, it's the house on the account, and the bill's in my name.",
+      "Yes, same address as always, and the account's under my name."
+    ],
+    "ack": [
+      "Sure, happy to help.",
+      "No problem. Let me get the account up."
+    ],
+    "probes": [
+      [
+        "What would you like me to check first?",
+        "The mailing address and the phone number on file."
+      ],
+      [
+        "Is the account holder still the same person?",
+        "Yes, still me."
+      ],
+      [
+        "Would you like bills by email instead of mail?",
+        "Yes, email is easier."
+      ],
+      [
+        "Is there anything else on the account you've been meaning to ask about?",
+        "Just whether my payments are all up to date."
+      ]
+    ],
+    "explain": [
+      "The phone number on file was an old one. I've updated it.",
+      "Your payments are up to date, with nothing outstanding."
+    ],
+    "good_after": [
+      [
+        "Will I get a confirmation?",
+        "Yes, an email confirming the changes is on its way."
+      ],
+      [
+        "And bills will come by email now?",
+        "From the next cycle, yes."
+      ]
+    ],
+    "bad_after": [
+      [
+        "Why can't you just do it?",
+        "This one needs the specialist team, so I've routed it with your details."
+      ],
+      [
+        "When will I hear?",
+        "Within three business days."
+      ]
+    ],
+    "recap_good": "To recap: your contact details are updated, bills move to email from next cycle, and the confirmation is in your inbox.",
+    "recap_bad": "To recap: the request is with the specialist team, and you'll hear back within three business days."
+  }
+}

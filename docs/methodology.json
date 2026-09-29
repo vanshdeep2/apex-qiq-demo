@@ -1,0 +1,60 @@
+{
+  "client": "Apex Utilities",
+  "summary": "Real, public data: 10 reviews read in full out of 52, 8 complaint themes with 7 verbatim quotes, 3 public company and news events. Synthetic, modelled data: the contact centre itself (16,000 contacts over 5 weeks, 807 fully generated records), its KPIs and the coaching effect.",
+  "takeaway": "Everything a client could look up themselves is real. Everything about Apex Utilities's own contact centre is modelled to match it, and is labelled as modelled in the demo.",
+  "rows": [
+    {
+      "layer": "Public customer reviews",
+      "source": "Google Business Profile reviews (2.5/5)",
+      "scale": "52 reviews on the platform, 10 read in full",
+      "provenance": "Real",
+      "url": "https://www.google.com/maps/place/Apex+Utilities+Inc./@53.2698008,-113.5427743,17z/data=!4m8!3m7!1s0x417034952dad57e3:0x46aa1efe2dfd8cb5!8m2!3d53.2698008!4d-113.5427743!9m1!1b1"
+    },
+    {
+      "layer": "Complaint themes and quotes",
+      "source": "Coded from the reviews and news read above",
+      "scale": "8 themes, 7 verbatim quotes",
+      "provenance": "Real"
+    },
+    {
+      "layer": "Company, market and news facts",
+      "source": "Public filings, earnings calls, news and industry press (linked in research.md)",
+      "scale": "3 public events, 3 competitor profiles",
+      "provenance": "Real"
+    },
+    {
+      "layer": "Contact-centre volumes, drivers and KPIs",
+      "source": "Modelled, calibrated to the public themes. Apex Utilities has not shared operational data",
+      "scale": "3,200 contacts/week x 5 weeks = 16,000 contacts, 10 driver categories",
+      "provenance": "Synthetic"
+    },
+    {
+      "layer": "Contact records, agents, transcripts and QA scores",
+      "source": "Generated from the story spec (seeded, reproducible)",
+      "scale": "807 contacts, 10 agents, one transcript and 14-question scorecard per contact",
+      "provenance": "Synthetic"
+    },
+    {
+      "layer": "Coaching effect",
+      "source": "Modelled outcome of Micro Coaching from week 2",
+      "scale": "Continuation CSAT 2.0 → 2.9",
+      "provenance": "Synthetic"
+    },
+    {
+      "layer": "Financial exposure",
+      "source": "Assumed CA$6 cost per handled contact (a blended estimate, not an Apex figure) and one avoidable repeat contact per affected customer; affected customers per week are modelled",
+      "scale": "Computed live from editable inputs",
+      "provenance": "Synthetic"
+    }
+  ],
+  "counts": {
+    "realRows": 3,
+    "syntheticRows": 4,
+    "reviewsRead": 10,
+    "reviewsTotal": 52,
+    "themes": 8,
+    "quotes": 7,
+    "modelledContacts": 16000,
+    "generatedRecords": 807
+  }
+}

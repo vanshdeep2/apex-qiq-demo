@@ -1,4 +1,8 @@
-const LABEL = 'Coaching deployed W3.'
+import { COACHING_WEEK_INDEX } from '../../data/agents'
+
+// Derived from the data layer so the label always matches where the marker is
+// drawn (WK_LABELS[COACHING_WEEK_INDEX]); it was hardcoded 'W3' in the template.
+const LABEL = `Coaching deployed W${COACHING_WEEK_INDEX + 1}.`
 const PAD_X = 6
 const BOX_H = 16
 // Measured equivalent for 600 10px DM Sans

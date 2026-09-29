@@ -1,5 +1,6 @@
 /** This demo uses illustrative, synthetic data - Apex Utilities has not shared operational data with QiQ. */
 import { AGENT_METRICS, AGENT_METRIC_ORDER, FLAGGED_AGENT_SLUGS, TEAM_AGGREGATES } from './agentMetrics'
+import { contactRef } from './contactSearchConstants'
 
 /** This agent's own top-ranked coaching card title, read live off their pack. */
 function topCoachingTopic(m) {
@@ -12,11 +13,15 @@ function statusOf(m) {
   return ['On Track', 'badge-green']
 }
 
+const CF_TEAM_WEEKLY = [0, 1, 2, 3, 4].map((w) =>
+  Object.values(AGENT_METRICS).reduce((n, m) => n + m.criticalFailureSeries[w], 0),
+)
+
 export const TEAM_HEALTH_STATS = [
-  { label: 'Team QA Score', value: '87.4', valueClass: 'val-amber', sub: 'Overall QA average · all 807 contacts' },
-  { label: 'CSAT', value: '2.3', valueClass: 'val-red', sub: 'Vs 4.3 on first contacts' },
-  { label: 'Auto-fail contacts', value: '11', valueClass: 'val-amber', sub: 'Week 5 · 55 across the period' },
-  { label: 'Agents with auto-fails', value: '10/10', valueClass: 'val-amber', sub: 'Pattern is team-wide, not individual' },
+  { label: 'Team QA Score', value: TEAM_AGGREGATES.qaScore.toFixed(1), valueClass: 'val-amber', sub: `Overall QA average · all ${TEAM_AGGREGATES.totalContacts} contacts` },
+  { label: 'CSAT', value: TEAM_AGGREGATES.continuationCsat.toFixed(1), valueClass: 'val-red', sub: `Follow-up contacts · vs ${TEAM_AGGREGATES.firstCsat.toFixed(1)} on first contacts` },
+  { label: 'Auto-fail contacts', value: String(CF_TEAM_WEEKLY[4]), valueClass: 'val-amber', sub: `Week 5 · ${TEAM_AGGREGATES.criticalFailuresTotal} across the period` },
+  { label: 'Agents with auto-fails', value: `${TEAM_AGGREGATES.agentsWithCriticalFailures}/${AGENT_METRIC_ORDER.length}`, valueClass: 'val-amber', sub: 'Pattern is team-wide, not individual' },
 ]
 
 export const MATRIX_ROWS = AGENT_METRIC_ORDER.map((slug) => {
@@ -93,8 +98,8 @@ export const COACHING_QUEUE_SUMMARY = [
 ]
 
 export const FLAGGED_CALLS = [
-  { callId: 'APX-000621', agent: 'Sipho van der Merwe', date: '2026-08-19', category: 'Start / Stop / Move / Payment / Account Access', flagReason: 'Continuation · high QA · CSAT 2', flagClass: 'flag-badge-gap', qaScore: '96', qaClass: 'val-amber' },
-  { callId: 'APX-000637', agent: 'Sipho van der Merwe', date: '2026-08-16', category: 'Billing & Fee Dispute Escalations', flagReason: 'Continuation · high QA · CSAT 2', flagClass: 'flag-badge-critical', qaScore: '100', qaClass: 'val-amber' },
-  { callId: 'APX-000615', agent: 'Kagiso Radebe', date: '2026-08-11', category: 'Start / Stop / Move / Payment / Account Access', flagReason: 'Continuation · high QA · CSAT 2', flagClass: 'flag-badge-critical', qaScore: '99', qaClass: 'val-amber' },
-  { callId: 'APX-000665', agent: 'Vusi Jacobs', date: '2026-08-15', category: 'Budget Billing (Equalization Plan) Enrollment & Adjustments', flagReason: 'Register mismatch · closed without route', flagClass: 'flag-badge-gap', qaScore: '94', qaClass: 'val-amber' },
+  { callId: contactRef(621), agent: 'Sipho van der Merwe', date: '2026-08-19', category: 'Start / Stop / Move / Payment / Account Access', flagReason: 'Continuation · high QA · CSAT 2', flagClass: 'flag-badge-gap', qaScore: '95.9', qaClass: 'val-amber' },
+  { callId: contactRef(637), agent: 'Sipho van der Merwe', date: '2026-08-16', category: 'Billing & Fee Dispute Escalations', flagReason: 'Continuation · high QA · CSAT 2', flagClass: 'flag-badge-critical', qaScore: '100', qaClass: 'val-amber' },
+  { callId: contactRef(615), agent: 'Kagiso Radebe', date: '2026-08-11', category: 'Start / Stop / Move / Payment / Account Access', flagReason: 'Continuation · high QA · CSAT 2', flagClass: 'flag-badge-critical', qaScore: '98.8', qaClass: 'val-amber' },
+  { callId: contactRef(665), agent: 'Vusi Jacobs', date: '2026-08-15', category: 'Budget Billing (Equalization Plan) Enrollment & Adjustments', flagReason: 'Continuation · high QA · CSAT 2', flagClass: 'flag-badge-gap', qaScore: '94.2', qaClass: 'val-amber' },
 ]

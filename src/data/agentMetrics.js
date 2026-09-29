@@ -42,41 +42,41 @@ export const AGENT_METRICS = {
     "continuationContacts": 22,
     "ahtSeconds": 334,
     "fcrPct": 81.0,
-    "csat": 3.87,
+    "csat": 3.85,
     "firstCsat": 4.33,
-    "continuationCsat": 2.14,
+    "continuationCsat": 2.05,
     "qaScore": 89.1,
     "continuationQa": 86.8,
     "ahtSeries": [
-      347,
-      326,
-      326,
+      332,
+      336,
+      330,
       334,
       340
     ],
     "fcrSeries": [
-      72.7,
-      78.3,
-      90.9,
+      83.3,
+      76.0,
+      83.3,
       88.2,
       76.2
     ],
     "csatSeries": [
-      3.5,
-      3.74,
-      3.86,
+      3.67,
+      3.6,
+      3.62,
       4.29,
-      4.05
+      4.19
     ],
     "processAdherencePct": 92.4,
     "resolutionRatePct": 81.0,
-    "criticalFailures": 9,
+    "criticalFailures": 8,
     "criticalFailureSeries": [
+      1,
       3,
-      2,
+      3,
       1,
-      1,
-      2
+      0
     ],
     "empathy": 3.79,
     "behaviourFirst": {
@@ -96,11 +96,11 @@ export const AGENT_METRICS = {
       "managing_frustration": 2.35
     },
     "qaSeries": [
-      89.0,
-      89.2,
-      89.2,
       89.1,
-      89.1
+      89.1,
+      89.1,
+      89.1,
+      89.0
     ],
     "firstQa": 90.8,
     "coachingPack": {
@@ -120,13 +120,13 @@ export const AGENT_METRICS = {
           "topicKey": "open_with_incident",
           "affectedKpis": [
             "csat",
-            "repeatContactRate"
+            "repeat_contact_rate"
           ],
           "contentType": "scenario_example",
           "cardShape": "standard",
           "title": "Start Where They Left Off \u00b7 Start / Stop / Move / Payment / Account Access",
           "personalNote": "12 of your 22 follow-up contacts this period (54.5%) mostly on Start / Stop / Move / Payment / Account Access and Rate Class / Bill Impact Questions (Phase 2 Change).",
-          "positiveOpening": "Your first-contact work is solid \u2014 4.33 CSAT there, well ahead of the 2.14 average on follow-ups.",
+          "positiveOpening": "Your first-contact work is solid \u2014 4.33 CSAT there, well ahead of the 2.05 average on follow-ups.",
           "coachingFocus": "When a customer is calling back about a dispute, rate question, or account issue that's already open, say what you can see has already happened before you ask them anything new.",
           "practicalGuidance": "Sounds like: \u201cI can see you were in touch last week about the rate-class change on your account \u2014 let me pick this up from there rather than starting over.\u201d",
           "miniChallenge": "On your next three follow-up contacts, open by naming what you can already see on the account before asking a new question.",
@@ -141,14 +141,14 @@ export const AGENT_METRICS = {
           "priorityRank": 2,
           "topicKey": "route_forward",
           "affectedKpis": [
-            "repeatContactRate",
+            "repeat_contact_rate",
             "fcr"
           ],
           "contentType": "trigger_action_reminder",
           "cardShape": "standard",
           "title": "Name Who Has It and When \u00b7 Rate Class / Bill Impact Questions (Phase 2 Change)",
           "personalNote": "6 of your 105 contacts this period (5.7%) closed without a named next step, mostly on Rate Class / Bill Impact Questions (Phase 2 Change) and Billing & Fee Dispute Escalations.",
-          "positiveOpening": "Your first-contact work is solid \u2014 4.33 CSAT there, well ahead of the 2.14 average on follow-ups.",
+          "positiveOpening": "Your first-contact work is solid \u2014 4.33 CSAT there, well ahead of the 2.05 average on follow-ups.",
           "coachingFocus": "Before closing a dispute or rate-question contact you can't fully resolve on the call, name who owns the next step and when the customer will hear back.",
           "practicalGuidance": "Sounds like: \u201cOur billing team will review this and get back to you by Thursday \u2014 I'm noting that on your account right now.\u201d",
           "miniChallenge": "On your next two unresolved contacts, name a specific team and a specific day before you end the call.",
@@ -169,7 +169,7 @@ export const AGENT_METRICS = {
           "cardShape": "standard",
           "title": "Let the Dispute Set the Tone \u00b7 Billing & Fee Dispute Escalations",
           "personalNote": "10 of your 105 contacts this period (9.5%) were disputes or fee complaints, mostly on Billing & Fee Dispute Escalations.",
-          "positiveOpening": "Your first-contact work is solid \u2014 4.33 CSAT there, well ahead of the 2.14 average on follow-ups.",
+          "positiveOpening": "Your first-contact work is solid \u2014 4.33 CSAT there, well ahead of the 2.05 average on follow-ups.",
           "coachingFocus": "A billing or fee dispute is not a routine account question \u2014 match your tone to how frustrated the customer actually is, not to the length of the call.",
           "practicalGuidance": "Sounds like: \u201cI understand a CA$600 adjustment landing with no warning is frustrating \u2014 let's go through exactly where that number came from.\u201d",
           "miniChallenge": "On your next two dispute or fee-complaint contacts, name the customer's frustration in your own words before you explain the charge.",
@@ -185,7 +185,7 @@ export const AGENT_METRICS = {
           "topicKey": "acknowledge_effort",
           "affectedKpis": [
             "csat",
-            "repeatContactRate"
+            "repeat_contact_rate"
           ],
           "contentType": "trigger_action_reminder",
           "cardShape": "short",
@@ -218,35 +218,35 @@ export const AGENT_METRICS = {
     "qaScore": 87.3,
     "continuationQa": 81.5,
     "ahtSeries": [
-      324,
-      313,
+      292,
+      317,
       311,
-      313,
-      340
+      335,
+      334
     ],
     "fcrSeries": [
-      75.0,
-      86.7,
+      88.9,
+      87.5,
       84.6,
-      76.9,
-      84.6
+      71.4,
+      78.6
     ],
     "csatSeries": [
-      3.58,
-      3.53,
+      4.22,
+      3.5,
       4.0,
-      2.92,
-      4.62
+      2.79,
+      4.36
     ],
     "processAdherencePct": 98.5,
     "resolutionRatePct": 81.8,
     "criticalFailures": 5,
     "criticalFailureSeries": [
+      0,
+      1,
+      1,
       2,
-      1,
-      1,
-      1,
-      0
+      1
     ],
     "empathy": 3.59,
     "behaviourFirst": {
@@ -266,11 +266,11 @@ export const AGENT_METRICS = {
       "managing_frustration": 2.59
     },
     "qaSeries": [
+      87.6,
       87.3,
       87.4,
-      87.4,
-      87.4,
-      87.3
+      87.1,
+      87.1
     ],
     "firstQa": 85.5,
     "coachingPack": {
@@ -290,7 +290,7 @@ export const AGENT_METRICS = {
           "topicKey": "open_with_incident",
           "affectedKpis": [
             "csat",
-            "repeatContactRate"
+            "repeat_contact_rate"
           ],
           "contentType": "scenario_example",
           "cardShape": "standard",
@@ -311,7 +311,7 @@ export const AGENT_METRICS = {
           "priorityRank": 2,
           "topicKey": "route_forward",
           "affectedKpis": [
-            "repeatContactRate",
+            "repeat_contact_rate",
             "fcr"
           ],
           "contentType": "trigger_action_reminder",
@@ -334,7 +334,7 @@ export const AGENT_METRICS = {
           "topicKey": "acknowledge_effort",
           "affectedKpis": [
             "csat",
-            "repeatContactRate"
+            "repeat_contact_rate"
           ],
           "contentType": "trigger_action_reminder",
           "cardShape": "standard",
@@ -382,9 +382,9 @@ export const AGENT_METRICS = {
     "continuationContacts": 20,
     "ahtSeconds": 318,
     "fcrPct": 90.9,
-    "csat": 3.81,
+    "csat": 3.85,
     "firstCsat": 4.25,
-    "continuationCsat": 2.3,
+    "continuationCsat": 2.5,
     "qaScore": 88.1,
     "continuationQa": 83.2,
     "ahtSeries": [
@@ -406,17 +406,17 @@ export const AGENT_METRICS = {
       3.88,
       3.94,
       4.0,
-      3.4
+      3.6
     ],
     "processAdherencePct": 97.7,
     "resolutionRatePct": 90.9,
-    "criticalFailures": 5,
+    "criticalFailures": 4,
     "criticalFailureSeries": [
       3,
       0,
       0,
       0,
-      2
+      1
     ],
     "empathy": 3.76,
     "behaviourFirst": {
@@ -440,7 +440,7 @@ export const AGENT_METRICS = {
       88.0,
       87.9,
       88.2,
-      88.1
+      88.2
     ],
     "firstQa": 87.2,
     "coachingPack": {
@@ -460,13 +460,13 @@ export const AGENT_METRICS = {
           "topicKey": "open_with_incident",
           "affectedKpis": [
             "csat",
-            "repeatContactRate"
+            "repeat_contact_rate"
           ],
           "contentType": "scenario_example",
           "cardShape": "standard",
           "title": "Start Where They Left Off \u00b7 Start / Stop / Move / Payment / Account Access",
           "personalNote": "14 of your 20 follow-up contacts this period (70.0%) mostly on Start / Stop / Move / Payment / Account Access and Estimated vs. Actual Meter Read Disputes.",
-          "positiveOpening": "Your first-contact work is solid \u2014 4.25 CSAT there, well ahead of the 2.30 average on follow-ups.",
+          "positiveOpening": "Your first-contact work is solid \u2014 4.25 CSAT there, well ahead of the 2.50 average on follow-ups.",
           "coachingFocus": "When a customer is calling back about a dispute, rate question, or account issue that's already open, say what you can see has already happened before you ask them anything new.",
           "practicalGuidance": "Sounds like: \u201cI can see you were in touch last week about the rate-class change on your account \u2014 let me pick this up from there rather than starting over.\u201d",
           "miniChallenge": "On your next three follow-up contacts, open by naming what you can already see on the account before asking a new question.",
@@ -481,14 +481,14 @@ export const AGENT_METRICS = {
           "priorityRank": 2,
           "topicKey": "route_forward",
           "affectedKpis": [
-            "repeatContactRate",
+            "repeat_contact_rate",
             "fcr"
           ],
           "contentType": "trigger_action_reminder",
           "cardShape": "standard",
           "title": "Name Who Has It and When \u00b7 System Betterment / Construction Project Notifications",
           "personalNote": "1 of your 88 contacts this period (1.1%) closed without a named next step, mostly on System Betterment / Construction Project Notifications.",
-          "positiveOpening": "Your first-contact work is solid \u2014 4.25 CSAT there, well ahead of the 2.30 average on follow-ups.",
+          "positiveOpening": "Your first-contact work is solid \u2014 4.25 CSAT there, well ahead of the 2.50 average on follow-ups.",
           "coachingFocus": "Before closing a dispute or rate-question contact you can't fully resolve on the call, name who owns the next step and when the customer will hear back.",
           "practicalGuidance": "Sounds like: \u201cOur billing team will review this and get back to you by Thursday \u2014 I'm noting that on your account right now.\u201d",
           "miniChallenge": "On your next two unresolved contacts, name a specific team and a specific day before you end the call.",
@@ -504,7 +504,7 @@ export const AGENT_METRICS = {
           "topicKey": "acknowledge_effort",
           "affectedKpis": [
             "csat",
-            "repeatContactRate"
+            "repeat_contact_rate"
           ],
           "contentType": "trigger_action_reminder",
           "cardShape": "short",
@@ -531,9 +531,9 @@ export const AGENT_METRICS = {
     "continuationContacts": 19,
     "ahtSeconds": 316,
     "fcrPct": 88.3,
-    "csat": 3.78,
+    "csat": 3.79,
     "firstCsat": 4.22,
-    "continuationCsat": 2.42,
+    "continuationCsat": 2.47,
     "qaScore": 88.7,
     "continuationQa": 83.5,
     "ahtSeries": [
@@ -552,20 +552,20 @@ export const AGENT_METRICS = {
     ],
     "csatSeries": [
       3.3,
-      3.91,
+      3.82,
       3.73,
       3.85,
-      3.89
+      4.0
     ],
     "processAdherencePct": 98.7,
     "resolutionRatePct": 88.3,
     "criticalFailures": 4,
     "criticalFailureSeries": [
       1,
-      0,
+      1,
       2,
       0,
-      1
+      0
     ],
     "empathy": 3.7,
     "behaviourFirst": {
@@ -589,7 +589,7 @@ export const AGENT_METRICS = {
       88.6,
       88.5,
       88.8,
-      88.7
+      88.8
     ],
     "firstQa": 87.5,
     "coachingPack": {
@@ -609,13 +609,13 @@ export const AGENT_METRICS = {
           "topicKey": "open_with_incident",
           "affectedKpis": [
             "csat",
-            "repeatContactRate"
+            "repeat_contact_rate"
           ],
           "contentType": "scenario_example",
           "cardShape": "standard",
           "title": "Start Where They Left Off \u00b7 Start / Stop / Move / Payment / Account Access",
           "personalNote": "16 of your 19 follow-up contacts this period (84.2%) mostly on Start / Stop / Move / Payment / Account Access and System Betterment / Construction Project Notifications.",
-          "positiveOpening": "Your first-contact work is solid \u2014 4.22 CSAT there, well ahead of the 2.42 average on follow-ups.",
+          "positiveOpening": "Your first-contact work is solid \u2014 4.22 CSAT there, well ahead of the 2.47 average on follow-ups.",
           "coachingFocus": "When a customer is calling back about a dispute, rate question, or account issue that's already open, say what you can see has already happened before you ask them anything new.",
           "practicalGuidance": "Sounds like: \u201cI can see you were in touch last week about the rate-class change on your account \u2014 let me pick this up from there rather than starting over.\u201d",
           "miniChallenge": "On your next three follow-up contacts, open by naming what you can already see on the account before asking a new question.",
@@ -630,14 +630,14 @@ export const AGENT_METRICS = {
           "priorityRank": 2,
           "topicKey": "route_forward",
           "affectedKpis": [
-            "repeatContactRate",
+            "repeat_contact_rate",
             "fcr"
           ],
           "contentType": "trigger_action_reminder",
           "cardShape": "standard",
           "title": "Name Who Has It and When \u00b7 Budget Billing (Equalization Plan) Enrollment & Adjustments",
           "personalNote": "5 of your 77 contacts this period (6.5%) closed without a named next step, mostly on Budget Billing (Equalization Plan) Enrollment & Adjustments and Gas Emergency / No-Heat / Leak Response.",
-          "positiveOpening": "Your first-contact work is solid \u2014 4.22 CSAT there, well ahead of the 2.42 average on follow-ups.",
+          "positiveOpening": "Your first-contact work is solid \u2014 4.22 CSAT there, well ahead of the 2.47 average on follow-ups.",
           "coachingFocus": "Before closing a dispute or rate-question contact you can't fully resolve on the call, name who owns the next step and when the customer will hear back.",
           "practicalGuidance": "Sounds like: \u201cOur billing team will review this and get back to you by Thursday \u2014 I'm noting that on your account right now.\u201d",
           "miniChallenge": "On your next two unresolved contacts, name a specific team and a specific day before you end the call.",
@@ -653,7 +653,7 @@ export const AGENT_METRICS = {
           "topicKey": "acknowledge_effort",
           "affectedKpis": [
             "csat",
-            "repeatContactRate"
+            "repeat_contact_rate"
           ],
           "contentType": "trigger_action_reminder",
           "cardShape": "short",
@@ -680,9 +680,9 @@ export const AGENT_METRICS = {
     "continuationContacts": 18,
     "ahtSeconds": 320,
     "fcrPct": 85.1,
-    "csat": 3.95,
+    "csat": 3.93,
     "firstCsat": 4.3,
-    "continuationCsat": 2.44,
+    "continuationCsat": 2.33,
     "qaScore": 85.5,
     "continuationQa": 82.4,
     "ahtSeries": [
@@ -700,21 +700,21 @@ export const AGENT_METRICS = {
       88.0
     ],
     "csatSeries": [
-      4.14,
-      4.28,
-      3.85,
+      4.05,
+      4.22,
+      3.77,
       3.31,
-      4.0
+      4.08
     ],
     "processAdherencePct": 94.7,
     "resolutionRatePct": 85.1,
-    "criticalFailures": 4,
+    "criticalFailures": 3,
     "criticalFailureSeries": [
       0,
       1,
       0,
       2,
-      1
+      0
     ],
     "empathy": 3.92,
     "behaviourFirst": {
@@ -758,13 +758,13 @@ export const AGENT_METRICS = {
           "topicKey": "open_with_incident",
           "affectedKpis": [
             "csat",
-            "repeatContactRate"
+            "repeat_contact_rate"
           ],
           "contentType": "scenario_example",
           "cardShape": "standard",
           "title": "Start Where They Left Off \u00b7 Rate Class / Bill Impact Questions (Phase 2 Change)",
           "personalNote": "8 of your 18 follow-up contacts this period (44.4%) mostly on Rate Class / Bill Impact Questions (Phase 2 Change) and Budget Billing (Equalization Plan) Enrollment & Adjustments.",
-          "positiveOpening": "Your first-contact work is solid \u2014 4.30 CSAT there, well ahead of the 2.44 average on follow-ups.",
+          "positiveOpening": "Your first-contact work is solid \u2014 4.30 CSAT there, well ahead of the 2.33 average on follow-ups.",
           "coachingFocus": "When a customer is calling back about a dispute, rate question, or account issue that's already open, say what you can see has already happened before you ask them anything new.",
           "practicalGuidance": "Sounds like: \u201cI can see you were in touch last week about the rate-class change on your account \u2014 let me pick this up from there rather than starting over.\u201d",
           "miniChallenge": "On your next three follow-up contacts, open by naming what you can already see on the account before asking a new question.",
@@ -779,19 +779,19 @@ export const AGENT_METRICS = {
           "priorityRank": 2,
           "topicKey": "route_forward",
           "affectedKpis": [
-            "repeatContactRate",
+            "repeat_contact_rate",
             "fcr"
           ],
           "contentType": "trigger_action_reminder",
           "cardShape": "standard",
           "title": "Name Who Has It and When \u00b7 Missing Bill / Account Reconciliation Issues",
           "personalNote": "4 of your 94 contacts this period (4.3%) closed without a named next step, mostly on Missing Bill / Account Reconciliation Issues and Start / Stop / Move / Payment / Account Access.",
-          "positiveOpening": "Your first-contact work is solid \u2014 4.30 CSAT there, well ahead of the 2.44 average on follow-ups.",
+          "positiveOpening": "Your first-contact work is solid \u2014 4.30 CSAT there, well ahead of the 2.33 average on follow-ups.",
           "coachingFocus": "Before closing a dispute or rate-question contact you can't fully resolve on the call, name who owns the next step and when the customer will hear back.",
           "practicalGuidance": "Sounds like: \u201cOur billing team will review this and get back to you by Thursday \u2014 I'm noting that on your account right now.\u201d",
           "miniChallenge": "On your next two unresolved contacts, name a specific team and a specific day before you end the call.",
           "encouragingClose": null,
-          "_severity": "high",
+          "_severity": "medium",
           "_metric": "4 contacts flagged for name who has it and when"
         },
         {
@@ -802,13 +802,13 @@ export const AGENT_METRICS = {
           "topicKey": "acknowledge_effort",
           "affectedKpis": [
             "csat",
-            "repeatContactRate"
+            "repeat_contact_rate"
           ],
           "contentType": "trigger_action_reminder",
           "cardShape": "standard",
           "title": "Count the Chasing \u00b7 Rate Class / Bill Impact Questions (Phase 2 Change)",
           "personalNote": "4 of your contacts this period were from a customer who had already reached out about the same issue, mostly on Rate Class / Bill Impact Questions (Phase 2 Change) and General Gas Safety & Appliance Questions (Non-Emergency).",
-          "positiveOpening": "Your first-contact work is solid \u2014 4.30 CSAT there, well ahead of the 2.44 average on follow-ups.",
+          "positiveOpening": "Your first-contact work is solid \u2014 4.30 CSAT there, well ahead of the 2.33 average on follow-ups.",
           "coachingFocus": "When a customer says they've already called about this, acknowledge the repeat specifically before you move to the answer.",
           "practicalGuidance": "Sounds like: \u201cYou're right, this is your second call on the equalization adjustment \u2014 thanks for staying on it, let's get this closed today.\u201d",
           "miniChallenge": "On your next two contacts where the customer mentions they've already been in touch, acknowledge the repeat by name before answering.",
@@ -850,9 +850,9 @@ export const AGENT_METRICS = {
     "continuationContacts": 15,
     "ahtSeconds": 318,
     "fcrPct": 78.6,
-    "csat": 3.68,
+    "csat": 3.7,
     "firstCsat": 4.22,
-    "continuationCsat": 2.2,
+    "continuationCsat": 2.27,
     "qaScore": 85.6,
     "continuationQa": 86.6,
     "ahtSeries": [
@@ -870,21 +870,21 @@ export const AGENT_METRICS = {
       50.0
     ],
     "csatSeries": [
-      3.62,
+      3.5,
       3.53,
       3.77,
       3.8,
-      3.7
+      3.9
     ],
     "processAdherencePct": 94.6,
     "resolutionRatePct": 78.6,
-    "criticalFailures": 5,
+    "criticalFailures": 3,
     "criticalFailureSeries": [
       0,
       1,
       2,
       0,
-      2
+      0
     ],
     "empathy": 3.67,
     "behaviourFirst": {
@@ -908,7 +908,7 @@ export const AGENT_METRICS = {
       85.7,
       85.6,
       85.9,
-      85.6
+      85.3
     ],
     "firstQa": 90.6,
     "coachingPack": {
@@ -928,13 +928,13 @@ export const AGENT_METRICS = {
           "topicKey": "open_with_incident",
           "affectedKpis": [
             "csat",
-            "repeatContactRate"
+            "repeat_contact_rate"
           ],
           "contentType": "scenario_example",
           "cardShape": "standard",
           "title": "Start Where They Left Off \u00b7 Budget Billing (Equalization Plan) Enrollment & Adjustments",
           "personalNote": "11 of your 15 follow-up contacts this period (73.3%) mostly on Budget Billing (Equalization Plan) Enrollment & Adjustments and System Betterment / Construction Project Notifications.",
-          "positiveOpening": "Your first-contact work is solid \u2014 4.22 CSAT there, well ahead of the 2.20 average on follow-ups.",
+          "positiveOpening": "Your first-contact work is solid \u2014 4.22 CSAT there, well ahead of the 2.27 average on follow-ups.",
           "coachingFocus": "When a customer is calling back about a dispute, rate question, or account issue that's already open, say what you can see has already happened before you ask them anything new.",
           "practicalGuidance": "Sounds like: \u201cI can see you were in touch last week about the rate-class change on your account \u2014 let me pick this up from there rather than starting over.\u201d",
           "miniChallenge": "On your next three follow-up contacts, open by naming what you can already see on the account before asking a new question.",
@@ -949,14 +949,14 @@ export const AGENT_METRICS = {
           "priorityRank": 2,
           "topicKey": "route_forward",
           "affectedKpis": [
-            "repeatContactRate",
+            "repeat_contact_rate",
             "fcr"
           ],
           "contentType": "trigger_action_reminder",
           "cardShape": "standard",
           "title": "Name Who Has It and When \u00b7 Estimated vs. Actual Meter Read Disputes",
           "personalNote": "2 of your 56 contacts this period (3.6%) closed without a named next step, mostly on Estimated vs. Actual Meter Read Disputes and Budget Billing (Equalization Plan) Enrollment & Adjustments.",
-          "positiveOpening": "Your first-contact work is solid \u2014 4.22 CSAT there, well ahead of the 2.20 average on follow-ups.",
+          "positiveOpening": "Your first-contact work is solid \u2014 4.22 CSAT there, well ahead of the 2.27 average on follow-ups.",
           "coachingFocus": "Before closing a dispute or rate-question contact you can't fully resolve on the call, name who owns the next step and when the customer will hear back.",
           "practicalGuidance": "Sounds like: \u201cOur billing team will review this and get back to you by Thursday \u2014 I'm noting that on your account right now.\u201d",
           "miniChallenge": "On your next two unresolved contacts, name a specific team and a specific day before you end the call.",
@@ -972,7 +972,7 @@ export const AGENT_METRICS = {
           "topicKey": "acknowledge_effort",
           "affectedKpis": [
             "csat",
-            "repeatContactRate"
+            "repeat_contact_rate"
           ],
           "contentType": "trigger_action_reminder",
           "cardShape": "short",
@@ -999,9 +999,9 @@ export const AGENT_METRICS = {
     "continuationContacts": 29,
     "ahtSeconds": 313,
     "fcrPct": 81.0,
-    "csat": 3.56,
+    "csat": 3.6,
     "firstCsat": 4.14,
-    "continuationCsat": 2.14,
+    "continuationCsat": 2.28,
     "qaScore": 88.7,
     "continuationQa": 85.5,
     "ahtSeries": [
@@ -1022,18 +1022,18 @@ export const AGENT_METRICS = {
       3.88,
       3.18,
       3.21,
-      3.5,
-      3.89
+      3.55,
+      4.05
     ],
     "processAdherencePct": 96.0,
     "resolutionRatePct": 81.0,
-    "criticalFailures": 11,
+    "criticalFailures": 8,
     "criticalFailureSeries": [
       3,
       2,
       2,
-      2,
-      2
+      1,
+      0
     ],
     "empathy": 3.84,
     "behaviourFirst": {
@@ -1057,7 +1057,7 @@ export const AGENT_METRICS = {
       88.8,
       88.9,
       88.6,
-      88.7
+      88.6
     ],
     "firstQa": 89.5,
     "coachingPack": {
@@ -1077,13 +1077,13 @@ export const AGENT_METRICS = {
           "topicKey": "open_with_incident",
           "affectedKpis": [
             "csat",
-            "repeatContactRate"
+            "repeat_contact_rate"
           ],
           "contentType": "scenario_example",
           "cardShape": "standard",
           "title": "Start Where They Left Off \u00b7 Billing & Fee Dispute Escalations",
           "personalNote": "18 of your 29 follow-up contacts this period (62.1%) mostly on Billing & Fee Dispute Escalations and Start / Stop / Move / Payment / Account Access.",
-          "positiveOpening": "Your first-contact work is solid \u2014 4.14 CSAT there, well ahead of the 2.14 average on follow-ups.",
+          "positiveOpening": "Your first-contact work is solid \u2014 4.14 CSAT there, well ahead of the 2.28 average on follow-ups.",
           "coachingFocus": "When a customer is calling back about a dispute, rate question, or account issue that's already open, say what you can see has already happened before you ask them anything new.",
           "practicalGuidance": "Sounds like: \u201cI can see you were in touch last week about the rate-class change on your account \u2014 let me pick this up from there rather than starting over.\u201d",
           "miniChallenge": "On your next three follow-up contacts, open by naming what you can already see on the account before asking a new question.",
@@ -1098,14 +1098,14 @@ export const AGENT_METRICS = {
           "priorityRank": 2,
           "topicKey": "route_forward",
           "affectedKpis": [
-            "repeatContactRate",
+            "repeat_contact_rate",
             "fcr"
           ],
           "contentType": "trigger_action_reminder",
           "cardShape": "standard",
           "title": "Name Who Has It and When \u00b7 Billing & Fee Dispute Escalations",
           "personalNote": "13 of your 100 contacts this period (13.0%) closed without a named next step, mostly on Billing & Fee Dispute Escalations and Start / Stop / Move / Payment / Account Access.",
-          "positiveOpening": "Your first-contact work is solid \u2014 4.14 CSAT there, well ahead of the 2.14 average on follow-ups.",
+          "positiveOpening": "Your first-contact work is solid \u2014 4.14 CSAT there, well ahead of the 2.28 average on follow-ups.",
           "coachingFocus": "Before closing a dispute or rate-question contact you can't fully resolve on the call, name who owns the next step and when the customer will hear back.",
           "practicalGuidance": "Sounds like: \u201cOur billing team will review this and get back to you by Thursday \u2014 I'm noting that on your account right now.\u201d",
           "miniChallenge": "On your next two unresolved contacts, name a specific team and a specific day before you end the call.",
@@ -1126,7 +1126,7 @@ export const AGENT_METRICS = {
           "cardShape": "standard",
           "title": "Let the Dispute Set the Tone \u00b7 Billing & Fee Dispute Escalations",
           "personalNote": "11 of your 100 contacts this period (11.0%) were disputes or fee complaints, mostly on Billing & Fee Dispute Escalations.",
-          "positiveOpening": "Your first-contact work is solid \u2014 4.14 CSAT there, well ahead of the 2.14 average on follow-ups.",
+          "positiveOpening": "Your first-contact work is solid \u2014 4.14 CSAT there, well ahead of the 2.28 average on follow-ups.",
           "coachingFocus": "A billing or fee dispute is not a routine account question \u2014 match your tone to how frustrated the customer actually is, not to the length of the call.",
           "practicalGuidance": "Sounds like: \u201cI understand a CA$600 adjustment landing with no warning is frustrating \u2014 let's go through exactly where that number came from.\u201d",
           "miniChallenge": "On your next two dispute or fee-complaint contacts, name the customer's frustration in your own words before you explain the charge.",
@@ -1142,7 +1142,7 @@ export const AGENT_METRICS = {
           "topicKey": "acknowledge_effort",
           "affectedKpis": [
             "csat",
-            "repeatContactRate"
+            "repeat_contact_rate"
           ],
           "contentType": "trigger_action_reminder",
           "cardShape": "short",
@@ -1169,9 +1169,9 @@ export const AGENT_METRICS = {
     "continuationContacts": 18,
     "ahtSeconds": 321,
     "fcrPct": 89.1,
-    "csat": 3.78,
+    "csat": 3.75,
     "firstCsat": 4.35,
-    "continuationCsat": 2.33,
+    "continuationCsat": 2.22,
     "qaScore": 86.4,
     "continuationQa": 81.6,
     "ahtSeries": [
@@ -1189,17 +1189,17 @@ export const AGENT_METRICS = {
       90.0
     ],
     "csatSeries": [
-      3.1,
-      4.0,
+      2.9,
+      3.94,
       3.67,
       3.73,
-      4.3
+      4.4
     ],
     "processAdherencePct": 100.0,
     "resolutionRatePct": 89.1,
-    "criticalFailures": 7,
+    "criticalFailures": 8,
     "criticalFailureSeries": [
-      2,
+      3,
       2,
       2,
       1,
@@ -1227,7 +1227,7 @@ export const AGENT_METRICS = {
       86.5,
       86.3,
       86.4,
-      86.4
+      86.1
     ],
     "firstQa": 85.6,
     "coachingPack": {
@@ -1247,13 +1247,13 @@ export const AGENT_METRICS = {
           "topicKey": "open_with_incident",
           "affectedKpis": [
             "csat",
-            "repeatContactRate"
+            "repeat_contact_rate"
           ],
           "contentType": "scenario_example",
           "cardShape": "standard",
           "title": "Start Where They Left Off \u00b7 Start / Stop / Move / Payment / Account Access",
           "personalNote": "14 of your 18 follow-up contacts this period (77.8%) mostly on Start / Stop / Move / Payment / Account Access and Budget Billing (Equalization Plan) Enrollment & Adjustments.",
-          "positiveOpening": "Your first-contact work is solid \u2014 4.35 CSAT there, well ahead of the 2.33 average on follow-ups.",
+          "positiveOpening": "Your first-contact work is solid \u2014 4.35 CSAT there, well ahead of the 2.22 average on follow-ups.",
           "coachingFocus": "When a customer is calling back about a dispute, rate question, or account issue that's already open, say what you can see has already happened before you ask them anything new.",
           "practicalGuidance": "Sounds like: \u201cI can see you were in touch last week about the rate-class change on your account \u2014 let me pick this up from there rather than starting over.\u201d",
           "miniChallenge": "On your next three follow-up contacts, open by naming what you can already see on the account before asking a new question.",
@@ -1268,14 +1268,14 @@ export const AGENT_METRICS = {
           "priorityRank": 2,
           "topicKey": "route_forward",
           "affectedKpis": [
-            "repeatContactRate",
+            "repeat_contact_rate",
             "fcr"
           ],
           "contentType": "trigger_action_reminder",
           "cardShape": "standard",
           "title": "Name Who Has It and When \u00b7 Budget Billing (Equalization Plan) Enrollment & Adjustments",
           "personalNote": "2 of your 64 contacts this period (3.1%) closed without a named next step, mostly on Budget Billing (Equalization Plan) Enrollment & Adjustments and Rate Class / Bill Impact Questions (Phase 2 Change).",
-          "positiveOpening": "Your first-contact work is solid \u2014 4.35 CSAT there, well ahead of the 2.33 average on follow-ups.",
+          "positiveOpening": "Your first-contact work is solid \u2014 4.35 CSAT there, well ahead of the 2.22 average on follow-ups.",
           "coachingFocus": "Before closing a dispute or rate-question contact you can't fully resolve on the call, name who owns the next step and when the customer will hear back.",
           "practicalGuidance": "Sounds like: \u201cOur billing team will review this and get back to you by Thursday \u2014 I'm noting that on your account right now.\u201d",
           "miniChallenge": "On your next two unresolved contacts, name a specific team and a specific day before you end the call.",
@@ -1296,7 +1296,7 @@ export const AGENT_METRICS = {
           "cardShape": "standard",
           "title": "Let the Dispute Set the Tone \u00b7 Billing & Fee Dispute Escalations",
           "personalNote": "2 of your 64 contacts this period (3.1%) were disputes or fee complaints, mostly on Billing & Fee Dispute Escalations.",
-          "positiveOpening": "Your first-contact work is solid \u2014 4.35 CSAT there, well ahead of the 2.33 average on follow-ups.",
+          "positiveOpening": "Your first-contact work is solid \u2014 4.35 CSAT there, well ahead of the 2.22 average on follow-ups.",
           "coachingFocus": "A billing or fee dispute is not a routine account question \u2014 match your tone to how frustrated the customer actually is, not to the length of the call.",
           "practicalGuidance": "Sounds like: \u201cI understand a CA$600 adjustment landing with no warning is frustrating \u2014 let's go through exactly where that number came from.\u201d",
           "miniChallenge": "On your next two dispute or fee-complaint contacts, name the customer's frustration in your own words before you explain the charge.",
@@ -1312,7 +1312,7 @@ export const AGENT_METRICS = {
           "topicKey": "acknowledge_effort",
           "affectedKpis": [
             "csat",
-            "repeatContactRate"
+            "repeat_contact_rate"
           ],
           "contentType": "trigger_action_reminder",
           "cardShape": "short",
@@ -1339,9 +1339,9 @@ export const AGENT_METRICS = {
     "continuationContacts": 25,
     "ahtSeconds": 306,
     "fcrPct": 81.6,
-    "csat": 3.7,
+    "csat": 3.67,
     "firstCsat": 4.18,
-    "continuationCsat": 2.52,
+    "continuationCsat": 2.4,
     "qaScore": 86.2,
     "continuationQa": 81.9,
     "ahtSeries": [
@@ -1359,19 +1359,19 @@ export const AGENT_METRICS = {
       81.2
     ],
     "csatSeries": [
-      3.33,
-      4.16,
-      3.43,
-      3.5,
+      3.22,
+      4.0,
+      3.36,
+      3.65,
       4.06
     ],
     "processAdherencePct": 92.0,
     "resolutionRatePct": 81.6,
-    "criticalFailures": 2,
+    "criticalFailures": 5,
     "criticalFailureSeries": [
+      2,
       1,
-      0,
-      1,
+      2,
       0,
       0
     ],
@@ -1417,13 +1417,13 @@ export const AGENT_METRICS = {
           "topicKey": "open_with_incident",
           "affectedKpis": [
             "csat",
-            "repeatContactRate"
+            "repeat_contact_rate"
           ],
           "contentType": "scenario_example",
           "cardShape": "standard",
           "title": "Start Where They Left Off \u00b7 Missing Bill / Account Reconciliation Issues",
           "personalNote": "15 of your 25 follow-up contacts this period (60.0%) mostly on Missing Bill / Account Reconciliation Issues and Budget Billing (Equalization Plan) Enrollment & Adjustments.",
-          "positiveOpening": "Your first-contact work is solid \u2014 4.18 CSAT there, well ahead of the 2.52 average on follow-ups.",
+          "positiveOpening": "Your first-contact work is solid \u2014 4.18 CSAT there, well ahead of the 2.40 average on follow-ups.",
           "coachingFocus": "When a customer is calling back about a dispute, rate question, or account issue that's already open, say what you can see has already happened before you ask them anything new.",
           "practicalGuidance": "Sounds like: \u201cI can see you were in touch last week about the rate-class change on your account \u2014 let me pick this up from there rather than starting over.\u201d",
           "miniChallenge": "On your next three follow-up contacts, open by naming what you can already see on the account before asking a new question.",
@@ -1438,19 +1438,19 @@ export const AGENT_METRICS = {
           "priorityRank": 2,
           "topicKey": "route_forward",
           "affectedKpis": [
-            "repeatContactRate",
+            "repeat_contact_rate",
             "fcr"
           ],
           "contentType": "trigger_action_reminder",
           "cardShape": "standard",
           "title": "Name Who Has It and When \u00b7 Missing Bill / Account Reconciliation Issues",
           "personalNote": "7 of your 87 contacts this period (8.0%) closed without a named next step, mostly on Missing Bill / Account Reconciliation Issues and Billing & Fee Dispute Escalations.",
-          "positiveOpening": "Your first-contact work is solid \u2014 4.18 CSAT there, well ahead of the 2.52 average on follow-ups.",
+          "positiveOpening": "Your first-contact work is solid \u2014 4.18 CSAT there, well ahead of the 2.40 average on follow-ups.",
           "coachingFocus": "Before closing a dispute or rate-question contact you can't fully resolve on the call, name who owns the next step and when the customer will hear back.",
           "practicalGuidance": "Sounds like: \u201cOur billing team will review this and get back to you by Thursday \u2014 I'm noting that on your account right now.\u201d",
           "miniChallenge": "On your next two unresolved contacts, name a specific team and a specific day before you end the call.",
           "encouragingClose": null,
-          "_severity": "medium",
+          "_severity": "high",
           "_metric": "7 contacts flagged for name who has it and when"
         },
         {
@@ -1466,12 +1466,12 @@ export const AGENT_METRICS = {
           "cardShape": "standard",
           "title": "Let the Dispute Set the Tone \u00b7 Missing Bill / Account Reconciliation Issues",
           "personalNote": "5 of your 87 contacts this period (5.7%) were disputes or fee complaints, mostly on Missing Bill / Account Reconciliation Issues and Billing & Fee Dispute Escalations.",
-          "positiveOpening": "Your first-contact work is solid \u2014 4.18 CSAT there, well ahead of the 2.52 average on follow-ups.",
+          "positiveOpening": "Your first-contact work is solid \u2014 4.18 CSAT there, well ahead of the 2.40 average on follow-ups.",
           "coachingFocus": "A billing or fee dispute is not a routine account question \u2014 match your tone to how frustrated the customer actually is, not to the length of the call.",
           "practicalGuidance": "Sounds like: \u201cI understand a CA$600 adjustment landing with no warning is frustrating \u2014 let's go through exactly where that number came from.\u201d",
           "miniChallenge": "On your next two dispute or fee-complaint contacts, name the customer's frustration in your own words before you explain the charge.",
           "encouragingClose": "Naming the frustration first is usually what gets a dispute call to de-escalate.",
-          "_severity": "medium",
+          "_severity": "high",
           "_metric": "5 contacts flagged for let the dispute set the tone"
         },
         {
@@ -1482,7 +1482,7 @@ export const AGENT_METRICS = {
           "topicKey": "acknowledge_effort",
           "affectedKpis": [
             "csat",
-            "repeatContactRate"
+            "repeat_contact_rate"
           ],
           "contentType": "trigger_action_reminder",
           "cardShape": "short",
@@ -1509,9 +1509,9 @@ export const AGENT_METRICS = {
     "continuationContacts": 14,
     "ahtSeconds": 330,
     "fcrPct": 85.7,
-    "csat": 3.97,
+    "csat": 4.01,
     "firstCsat": 4.36,
-    "continuationCsat": 2.43,
+    "continuationCsat": 2.64,
     "qaScore": 87.1,
     "continuationQa": 85.6,
     "ahtSeries": [
@@ -1531,19 +1531,19 @@ export const AGENT_METRICS = {
     "csatSeries": [
       3.93,
       4.5,
-      4.33,
-      3.44,
-      3.6
+      4.28,
+      3.62,
+      3.7
     ],
     "processAdherencePct": 94.3,
     "resolutionRatePct": 85.7,
-    "criticalFailures": 3,
+    "criticalFailures": 2,
     "criticalFailureSeries": [
       1,
       0,
       0,
       1,
-      1
+      0
     ],
     "empathy": 3.71,
     "behaviourFirst": {
@@ -1563,11 +1563,11 @@ export const AGENT_METRICS = {
       "managing_frustration": 2.46
     },
     "qaSeries": [
-      87.0,
+      86.9,
       87.1,
       86.9,
       87.3,
-      87.1
+      87.3
     ],
     "firstQa": 89.6,
     "coachingPack": {
@@ -1587,13 +1587,13 @@ export const AGENT_METRICS = {
           "topicKey": "open_with_incident",
           "affectedKpis": [
             "csat",
-            "repeatContactRate"
+            "repeat_contact_rate"
           ],
           "contentType": "scenario_example",
           "cardShape": "standard",
           "title": "Start Where They Left Off \u00b7 Rate Class / Bill Impact Questions (Phase 2 Change)",
           "personalNote": "10 of your 14 follow-up contacts this period (71.4%) mostly on Rate Class / Bill Impact Questions (Phase 2 Change) and Start / Stop / Move / Payment / Account Access.",
-          "positiveOpening": "Your first-contact work is solid \u2014 4.36 CSAT there, well ahead of the 2.43 average on follow-ups.",
+          "positiveOpening": "Your first-contact work is solid \u2014 4.36 CSAT there, well ahead of the 2.64 average on follow-ups.",
           "coachingFocus": "When a customer is calling back about a dispute, rate question, or account issue that's already open, say what you can see has already happened before you ask them anything new.",
           "practicalGuidance": "Sounds like: \u201cI can see you were in touch last week about the rate-class change on your account \u2014 let me pick this up from there rather than starting over.\u201d",
           "miniChallenge": "On your next three follow-up contacts, open by naming what you can already see on the account before asking a new question.",
@@ -1608,14 +1608,14 @@ export const AGENT_METRICS = {
           "priorityRank": 2,
           "topicKey": "route_forward",
           "affectedKpis": [
-            "repeatContactRate",
+            "repeat_contact_rate",
             "fcr"
           ],
           "contentType": "trigger_action_reminder",
           "cardShape": "standard",
           "title": "Name Who Has It and When \u00b7 Billing & Fee Dispute Escalations",
           "personalNote": "4 of your 70 contacts this period (5.7%) closed without a named next step, mostly on Billing & Fee Dispute Escalations and Budget Billing (Equalization Plan) Enrollment & Adjustments.",
-          "positiveOpening": "Your first-contact work is solid \u2014 4.36 CSAT there, well ahead of the 2.43 average on follow-ups.",
+          "positiveOpening": "Your first-contact work is solid \u2014 4.36 CSAT there, well ahead of the 2.64 average on follow-ups.",
           "coachingFocus": "Before closing a dispute or rate-question contact you can't fully resolve on the call, name who owns the next step and when the customer will hear back.",
           "practicalGuidance": "Sounds like: \u201cOur billing team will review this and get back to you by Thursday \u2014 I'm noting that on your account right now.\u201d",
           "miniChallenge": "On your next two unresolved contacts, name a specific team and a specific day before you end the call.",
@@ -1636,7 +1636,7 @@ export const AGENT_METRICS = {
           "cardShape": "standard",
           "title": "Let the Dispute Set the Tone \u00b7 Billing & Fee Dispute Escalations",
           "personalNote": "4 of your 70 contacts this period (5.7%) were disputes or fee complaints, mostly on Billing & Fee Dispute Escalations.",
-          "positiveOpening": "Your first-contact work is solid \u2014 4.36 CSAT there, well ahead of the 2.43 average on follow-ups.",
+          "positiveOpening": "Your first-contact work is solid \u2014 4.36 CSAT there, well ahead of the 2.64 average on follow-ups.",
           "coachingFocus": "A billing or fee dispute is not a routine account question \u2014 match your tone to how frustrated the customer actually is, not to the length of the call.",
           "practicalGuidance": "Sounds like: \u201cI understand a CA$600 adjustment landing with no warning is frustrating \u2014 let's go through exactly where that number came from.\u201d",
           "miniChallenge": "On your next two dispute or fee-complaint contacts, name the customer's frustration in your own words before you explain the charge.",
@@ -1652,7 +1652,7 @@ export const AGENT_METRICS = {
           "topicKey": "acknowledge_effort",
           "affectedKpis": [
             "csat",
-            "repeatContactRate"
+            "repeat_contact_rate"
           ],
           "contentType": "trigger_action_reminder",
           "cardShape": "short",
@@ -1674,12 +1674,12 @@ export const AGENT_METRICS = {
 export const TEAM_AGGREGATES = {
   "totalContacts": 807,
   "qaScore": 87.39,
-  "csat": 3.78,
+  "csat": 3.79,
   "firstCsat": 4.27,
-  "continuationCsat": 2.29,
+  "continuationCsat": 2.31,
   "ahtSeconds": 320,
   "fcrPct": 84.3,
-  "criticalFailuresTotal": 55,
+  "criticalFailuresTotal": 50,
   "agentsWithCriticalFailures": 10
 }
 
@@ -1698,9 +1698,9 @@ export const AGENT_METRIC_ORDER = [
 
 /** Ranked by critical failures, then by CSAT ascending. */
 export const FLAGGED_AGENT_SLUGS = [
-  "sipho-van-der-merwe",
   "kagiso-radebe",
   "vusi-jacobs",
+  "sipho-van-der-merwe",
   "karabo-zulu"
 ]
 
