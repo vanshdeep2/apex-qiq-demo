@@ -57,3 +57,4 @@
 
 .voc-strip-exec-title .prov-link, .voc-strip-exec-title .prov-badge { text-transform: none; letter-spacing: 0.02em; }
 .voc-strip-exec-title .prov-link { font-weight: 500; margin-left: 6px; }
+.nav-signout { text-decoration: none; display: inline-flex; align-items: center; }

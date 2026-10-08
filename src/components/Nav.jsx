@@ -4,6 +4,7 @@ import { BRAND } from '../config/brand'
 import { PAGES, MENU_ORDER } from '../config/pages'
 import ProvenanceBadge from './ProvenanceBadge'
 import MethodologyDrawer from './MethodologyDrawer'
+import UserMenu from './UserMenu'
 import '../styles/components.css'
 
 /** Where each page's numbers come from (see ProvenanceBadge). */
@@ -81,6 +82,7 @@ export default function Nav({ currentPage, liveLabel, callsPill, pageTitle, navE
           How this demo was built
         </button>
         {navExtra}
+        <UserMenu />
       </div>
       <MethodologyDrawer open={methodOpen} onClose={() => setMethodOpen(false)} />
     </nav>
